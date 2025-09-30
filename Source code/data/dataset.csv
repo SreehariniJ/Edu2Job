@@ -1,0 +1,601 @@
+degree,major,cgpa,skills,job_role
+MBA,Civil,6.89,"Python, Data Structures, Git, Linux, C",Software Engineer
+MBA,Mechanical,8.38,"Data Structures, SQL, Git, Linux, Java",Software Engineer
+M.Sc,Business,8.35,"SQL, Python, C++, Linux, Git, CNC",Software Engineer
+MBA,Computer Science,9.79,"Python, SQL, Java, Algorithms",Software Engineer
+B.Tech,Mechanical,8.2,"Python, Java, Data Structures, C++",Software Engineer
+M.Tech,Finance,6.89,"Algorithms, Java, Data Structures, Python, Git",Software Engineer
+B.Tech,Finance,8.73,"Linux, Java, Algorithms",Software Engineer
+M.Sc,Electronics,7.46,"Java, Linux, Python, Accounting",Software Engineer
+MBA,Civil,6.99,"Java, Git, Algorithms, C++, SQL, Matlab",Software Engineer
+M.Sc,Business,7.17,"Git, Algorithms, SQL, Linux",Software Engineer
+MBA,Business,6.46,"SQL, Data Structures, Python, C++",Software Engineer
+B.Sc,Electronics,6.07,"Java, Python, SQL, Python",Software Engineer
+M.Tech,Business,8.23,"SQL, Data Structures, Java, Python, C++",Software Engineer
+M.Tech,Finance,8.16,"Python, Algorithms, Linux, C++, Data Structures",Software Engineer
+M.Tech,Mechanical,8.23,"Java, Python, C++, Algorithms, Python",Software Engineer
+M.Sc,Mechanical,7.17,"SQL, C++, Git, Linux, Algorithms, Python",Software Engineer
+M.Sc,Civil,9.51,"Java, Python, C++, Data Structures",Software Engineer
+MBA,Finance,7.48,"Linux, Data Structures, SQL, Java, C++",Software Engineer
+M.Sc,Civil,9.63,"Algorithms, C++, Linux",Software Engineer
+MBA,Electronics,9.09,"Git, C++, SQL, Java, Data Structures",Software Engineer
+M.Tech,Finance,8.62,"Python, Git, Linux",Software Engineer
+B.Tech,Electronics,6.75,"Java, SQL, Data Structures, Git",Software Engineer
+B.Sc,Computer Science,9.39,"SQL, C++, Java",Software Engineer
+M.Sc,Mechanical,6.81,"Python, Algorithms, C++, Linux",Software Engineer
+B.Sc,Electronics,8.83,"Java, C++, Python, Data Structures, Linux",Software Engineer
+B.Tech,Finance,7.08,"C++, Linux, Algorithms, Git, SQL",Software Engineer
+B.Tech,Mechanical,6.48,"C++, Data Structures, Python, Git",Software Engineer
+MBA,Electronics,6.15,"Data Structures, Python, SQL, Linux",Software Engineer
+M.Sc,Civil,9.0,"SQL, Algorithms, Data Structures, Java, Git",Software Engineer
+B.Tech,Business,7.22,"SQL, Linux, Java, Data Structures, Python",Software Engineer
+B.Sc,Civil,6.69,"Data Structures, Linux, Git, Algorithms, Excel",Software Engineer
+B.Sc,Computer Science,9.39,"Python, Linux, Git",Software Engineer
+M.Tech,Civil,9.62,"Algorithms, C++, Linux, SQL",Software Engineer
+MBA,Business,9.63,"Algorithms, SQL, C++, Git, Data Structures",Software Engineer
+M.Tech,Civil,9.61,"Linux, C++, Algorithms, Python, SQL",Software Engineer
+B.Sc,Electronics,9.74,"Data Structures, Java, Python, Linux",Software Engineer
+B.Tech,Civil,7.31,"C++, SQL, Python, Data Structures",Software Engineer
+M.Tech,Mechanical,6.84,"Java, Algorithms, C++, Git, Data Structures",Software Engineer
+M.Sc,Computer Science,6.08,"Python, Algorithms, Java",Software Engineer
+M.Sc,Electronics,8.7,"SQL, Java, Data Structures, Algorithms",Software Engineer
+MBA,Electronics,8.9,"SQL, Java, Data Structures",Software Engineer
+B.Tech,Finance,8.01,"Python, C++, Algorithms",Software Engineer
+M.Sc,Finance,7.33,"Linux, Data Structures, Git, Algorithms",Software Engineer
+B.Sc,Finance,8.02,"Algorithms, Python, Linux, Finance",Software Engineer
+M.Sc,Civil,8.98,"Git, Data Structures, SQL, Java, Linux",Software Engineer
+B.Sc,Business,6.1,"Algorithms, C++, SQL, Java",Software Engineer
+B.Sc,Electronics,9.65,"Data Structures, C++, SQL",Software Engineer
+M.Tech,Business,8.07,"SQL, Algorithms, Git",Software Engineer
+B.Tech,Finance,6.64,"Linux, Java, Algorithms",Software Engineer
+M.Sc,Civil,9.21,"Algorithms, Python, Linux, Java",Software Engineer
+B.Tech,Computer Science,7.76,"C++, Git, Python, Algorithms",Software Engineer
+M.Tech,Finance,8.01,"Algorithms, Data Structures, SQL, Java, M&A",Software Engineer
+MBA,Finance,9.38,"Python, Linux, SQL, Java, Algorithms",Software Engineer
+M.Tech,Civil,7.49,"Python, SQL, Java, C++",Software Engineer
+B.Tech,Business,6.59,"Python, Git, C++, Algorithms, SQL",Software Engineer
+M.Sc,Business,9.61,"Git, SQL, Algorithms, C++",Software Engineer
+B.Tech,Mechanical,9.35,"Linux, SQL, C++, Data Structures",Software Engineer
+B.Tech,Civil,8.83,"Git, Python, SQL, Linux, Data Structures",Software Engineer
+MBA,Mechanical,7.32,"Git, Data Structures, SQL, C++",Software Engineer
+M.Sc,Computer Science,6.33,"SQL, Java, Git",Software Engineer
+B.Tech,Business,7.48,"Data Structures, Git, C++, SQL, Algorithms, Materials",Software Engineer
+M.Tech,Mechanical,6.19,"Java, Git, C++, Linux, Algorithms, Financial Modeling",Software Engineer
+MBA,Civil,9.41,"Linux, Git, Algorithms, Matlab",Software Engineer
+MBA,Mechanical,9.76,"Data Structures, Python, Linux, SQL, Java",Software Engineer
+B.Sc,Finance,8.18,"Java, Git, Algorithms, SQL, M&A",Software Engineer
+M.Tech,Computer Science,6.73,"C++, SQL, Linux, Python, Algorithms",Software Engineer
+B.Tech,Computer Science,6.15,"Data Structures, Java, Git, Financial Modeling",Software Engineer
+B.Tech,Mechanical,6.65,"Git, C++, Data Structures",Software Engineer
+B.Sc,Finance,6.94,"Python, Git, Java, C++, Linux",Software Engineer
+M.Sc,Business,6.19,"Git, SQL, Java, Algorithms, Data Structures",Software Engineer
+B.Sc,Mechanical,9.16,"Java, Python, C++, Git",Software Engineer
+M.Sc,Electronics,8.05,"Data Structures, Python, SQL, Git",Software Engineer
+M.Tech,Civil,7.67,"Algorithms, Git, C++, Python, Statistics",Software Engineer
+B.Sc,Computer Science,7.76,"Linux, Java, Algorithms, C++",Software Engineer
+B.Sc,Business,6.87,"Algorithms, C++, Java, Linux, Data Structures",Software Engineer
+B.Tech,Electronics,7.97,"C++, Linux, Algorithms, Thermodynamics",Software Engineer
+M.Sc,Computer Science,8.56,"Algorithms, Linux, Git, Data Structures, Python",Software Engineer
+M.Tech,Mechanical,8.08,"Data Structures, Linux, Git",Software Engineer
+M.Sc,Civil,8.11,"Python, Algorithms, SQL, C++",Software Engineer
+B.Sc,Computer Science,6.54,"Git, Python, Linux, SQL, Java",Software Engineer
+M.Tech,Business,6.04,"Algorithms, Data Structures, Java, C++, Git",Software Engineer
+M.Tech,Computer Science,8.49,"Linux, Python, SQL",Software Engineer
+M.Sc,Finance,7.26,"SQL, Java, C++, Algorithms, Data Structures",Software Engineer
+B.Tech,Computer Science,9.78,"Git, Algorithms, Data Structures, Python, SQL",Software Engineer
+MBA,Business,7.96,"C++, Data Structures, SQL",Software Engineer
+M.Sc,Electronics,7.59,"Java, Algorithms, Linux",Software Engineer
+B.Sc,Computer Science,9.7,"SQL, Algorithms, Python, Thermodynamics",Software Engineer
+M.Sc,Civil,8.57,"SQL, Linux, Python, SolidWorks",Software Engineer
+M.Sc,Mechanical,9.75,"Java, Git, Algorithms",Software Engineer
+M.Sc,Business,6.51,"Java, C++, Data Structures, Python, SQL",Software Engineer
+B.Tech,Civil,9.63,"C++, Linux, Data Structures, Algorithms",Software Engineer
+M.Tech,Civil,7.53,"Python, C++, SQL, Microcontrollers",Software Engineer
+MBA,Mechanical,9.19,"Java, Data Structures, SQL, Linux",Software Engineer
+B.Tech,Mechanical,8.47,"Git, Python, C++, Java, Algorithms",Software Engineer
+M.Sc,Business,7.94,"Java, Data Structures, Git, C++",Software Engineer
+B.Tech,Business,6.79,"Algorithms, SQL, Python",Software Engineer
+M.Tech,Electronics,7.66,"Java, Git, SQL",Software Engineer
+B.Sc,Electronics,6.1,"Linux, SQL, C++, Git",Software Engineer
+B.Tech,Finance,9.36,"C++, Java, Data Structures, Algorithms, Python, Excel",Software Engineer
+B.Tech,Mechanical,7.71,"SQL, C++, Linux, Algorithms, Python",Software Engineer
+M.Tech,Business,8.25,"Electronics, C++, C",Embedded Systems Engineer
+M.Tech,Civil,7.21,"Verilog, C, RTOS",Embedded Systems Engineer
+B.Tech,Computer Science,8.65,"Verilog, Python, C",Embedded Systems Engineer
+MBA,Civil,9.51,"Python, C++, Electronics",Embedded Systems Engineer
+B.Sc,Civil,7.87,"RTOS, C++, Verilog, Electronics, Matlab",Embedded Systems Engineer
+M.Tech,Finance,6.55,"Python, C, Verilog",Embedded Systems Engineer
+M.Tech,Electronics,7.16,"Python, Verilog, RTOS, Electronics",Embedded Systems Engineer
+M.Tech,Business,7.25,"C, Microcontrollers, RTOS, Electronics, C++",Embedded Systems Engineer
+M.Tech,Finance,8.41,"RTOS, C, Python, Electronics, Verilog, Python",Embedded Systems Engineer
+B.Sc,Civil,7.73,"RTOS, Electronics, Verilog, Python, C",Embedded Systems Engineer
+M.Tech,Finance,9.05,"Electronics, Verilog, Microcontrollers, Python",Embedded Systems Engineer
+M.Tech,Civil,7.46,"Microcontrollers, C++, Electronics, SQL",Embedded Systems Engineer
+B.Sc,Business,8.75,"Verilog, RTOS, Microcontrollers, C",Embedded Systems Engineer
+MBA,Electronics,7.27,"Verilog, Electronics, C, C++, RTOS",Embedded Systems Engineer
+B.Tech,Business,9.2,"C++, Python, Electronics",Embedded Systems Engineer
+MBA,Mechanical,8.97,"Python, Verilog, C++, Microcontrollers, RTOS",Embedded Systems Engineer
+B.Tech,Civil,8.0,"Verilog, C++, C, Electronics, Microcontrollers",Embedded Systems Engineer
+MBA,Civil,7.58,"RTOS, Python, C++, Microcontrollers, Python",Embedded Systems Engineer
+B.Tech,Finance,8.93,"Microcontrollers, Verilog, Electronics, RTOS, C",Embedded Systems Engineer
+B.Tech,Electronics,8.45,"C, Electronics, Python, Verilog",Embedded Systems Engineer
+B.Sc,Mechanical,9.69,"Verilog, C, C++, RTOS",Embedded Systems Engineer
+M.Sc,Mechanical,6.93,"Python, Electronics, RTOS, Microcontrollers, Verilog",Embedded Systems Engineer
+M.Tech,Computer Science,6.79,"C++, RTOS, Microcontrollers, Python, C",Embedded Systems Engineer
+B.Sc,Civil,7.1,"Python, Electronics, RTOS, Microcontrollers, Accounting",Embedded Systems Engineer
+B.Tech,Computer Science,7.94,"Python, C++, Electronics",Embedded Systems Engineer
+B.Sc,Finance,8.07,"C++, RTOS, Microcontrollers",Embedded Systems Engineer
+M.Tech,Electronics,7.84,"C, Python, C++, Microcontrollers, RTOS",Embedded Systems Engineer
+M.Sc,Finance,8.24,"Verilog, Electronics, RTOS, Python, CNC",Embedded Systems Engineer
+M.Tech,Civil,6.69,"RTOS, C++, Electronics, Verilog",Embedded Systems Engineer
+B.Sc,Finance,8.01,"Electronics, Microcontrollers, Python, Excel",Embedded Systems Engineer
+M.Sc,Business,6.47,"Verilog, C, RTOS, C++",Embedded Systems Engineer
+B.Tech,Business,8.11,"Verilog, Python, RTOS, C",Embedded Systems Engineer
+B.Tech,Civil,8.21,"Electronics, C, Python, C++, Microcontrollers",Embedded Systems Engineer
+MBA,Electronics,6.7,"C++, Microcontrollers, Python",Embedded Systems Engineer
+MBA,Computer Science,7.01,"Electronics, Python, C, RTOS, Microcontrollers",Embedded Systems Engineer
+MBA,Mechanical,7.34,"Electronics, C++, RTOS, C, Excel",Embedded Systems Engineer
+M.Sc,Computer Science,9.74,"C, Verilog, RTOS, Communication",Embedded Systems Engineer
+M.Tech,Business,6.74,"RTOS, Python, Electronics",Embedded Systems Engineer
+M.Tech,Civil,7.25,"Microcontrollers, Python, Verilog",Embedded Systems Engineer
+M.Tech,Finance,9.71,"Electronics, Verilog, C++, C",Embedded Systems Engineer
+M.Sc,Business,9.11,"Verilog, Electronics, RTOS, Python, Microcontrollers, Data Structures",Embedded Systems Engineer
+MBA,Business,9.48,"Python, Verilog, Microcontrollers, C",Embedded Systems Engineer
+B.Tech,Electronics,7.84,"Microcontrollers, Python, Verilog, C, RTOS",Embedded Systems Engineer
+M.Tech,Civil,9.44,"C++, RTOS, Python, Electronics, Microcontrollers",Embedded Systems Engineer
+B.Sc,Mechanical,8.18,"C, Electronics, Python, RTOS",Embedded Systems Engineer
+M.Tech,Computer Science,9.49,"Python, C, Microcontrollers, C++, Verilog",Embedded Systems Engineer
+B.Tech,Business,6.71,"Python, C++, Microcontrollers",Embedded Systems Engineer
+B.Sc,Electronics,7.5,"Electronics, RTOS, C",Embedded Systems Engineer
+MBA,Business,8.02,"RTOS, C++, Verilog, Python, C",Embedded Systems Engineer
+B.Tech,Finance,7.1,"RTOS, Verilog, Microcontrollers, C++, Python, SolidWorks",Embedded Systems Engineer
+B.Sc,Business,8.62,"C++, Verilog, Electronics",Embedded Systems Engineer
+B.Sc,Electronics,8.67,"Verilog, RTOS, Python, Microcontrollers",Embedded Systems Engineer
+MBA,Electronics,6.68,"C, Microcontrollers, Verilog",Embedded Systems Engineer
+MBA,Mechanical,8.75,"Verilog, Electronics, C++, Financial Modeling",Embedded Systems Engineer
+B.Sc,Civil,8.98,"Verilog, Microcontrollers, Python, RTOS",Embedded Systems Engineer
+M.Sc,Computer Science,9.3,"Electronics, Microcontrollers, Verilog, C++, Python",Embedded Systems Engineer
+M.Tech,Civil,6.65,"RTOS, Verilog, Python, Electronics",Embedded Systems Engineer
+M.Tech,Electronics,9.46,"RTOS, C, Electronics, Statistics",Embedded Systems Engineer
+B.Sc,Computer Science,9.69,"RTOS, C, Electronics",Embedded Systems Engineer
+MBA,Electronics,8.06,"Microcontrollers, C, Python, Electronics",Embedded Systems Engineer
+M.Sc,Electronics,9.41,"Microcontrollers, C, Python, C++",Embedded Systems Engineer
+MBA,Computer Science,9.31,"C++, RTOS, Python, C",Embedded Systems Engineer
+M.Tech,Computer Science,8.47,"C, Python, RTOS",Embedded Systems Engineer
+B.Tech,Civil,7.4,"RTOS, Microcontrollers, C, Electronics, Verilog",Embedded Systems Engineer
+MBA,Business,7.43,"Electronics, Verilog, C, Microcontrollers, C++",Embedded Systems Engineer
+M.Sc,Electronics,6.69,"Microcontrollers, C++, Electronics",Embedded Systems Engineer
+MBA,Electronics,8.33,"C, RTOS, C++, Verilog, Microcontrollers",Embedded Systems Engineer
+MBA,Computer Science,9.79,"Electronics, C++, Python, C, RTOS, Excel",Embedded Systems Engineer
+M.Tech,Computer Science,6.39,"C, Python, C++, Verilog, Electronics",Embedded Systems Engineer
+B.Tech,Business,7.56,"Python, RTOS, Electronics, Verilog, Microcontrollers",Embedded Systems Engineer
+M.Sc,Electronics,7.01,"C++, Microcontrollers, C, Electronics",Embedded Systems Engineer
+M.Tech,Electronics,9.17,"Verilog, Python, C++",Embedded Systems Engineer
+MBA,Computer Science,6.13,"Verilog, C++, Electronics, RTOS, C",Embedded Systems Engineer
+M.Tech,Computer Science,7.61,"Verilog, RTOS, C++, Microcontrollers",Embedded Systems Engineer
+M.Tech,Computer Science,6.82,"C, C++, Electronics, Microcontrollers, Verilog, Python",Embedded Systems Engineer
+B.Sc,Finance,6.61,"RTOS, Python, Electronics",Embedded Systems Engineer
+MBA,Mechanical,9.55,"C++, RTOS, Electronics, Microcontrollers",Embedded Systems Engineer
+B.Tech,Business,9.02,"C, Verilog, C++, Microcontrollers, RTOS, Excel",Embedded Systems Engineer
+B.Sc,Finance,7.15,"Electronics, RTOS, Verilog, Linux",Embedded Systems Engineer
+B.Tech,Mechanical,8.43,"Python, C++, C",Embedded Systems Engineer
+B.Sc,Electronics,7.54,"C++, RTOS, Python, Microcontrollers",Embedded Systems Engineer
+M.Tech,Mechanical,6.53,"C++, Verilog, C, Electronics",Embedded Systems Engineer
+B.Sc,Finance,7.93,"Verilog, C, Electronics, Microcontrollers",Embedded Systems Engineer
+M.Sc,Computer Science,7.75,"RTOS, Electronics, C",Embedded Systems Engineer
+MBA,Business,9.1,"RTOS, Microcontrollers, C, C++",Embedded Systems Engineer
+M.Tech,Mechanical,6.23,"RTOS, Electronics, C++, Microcontrollers, Verilog",Embedded Systems Engineer
+M.Sc,Computer Science,7.69,"Electronics, C++, Microcontrollers, Verilog, C",Embedded Systems Engineer
+M.Sc,Finance,6.03,"Electronics, Verilog, Python, C",Embedded Systems Engineer
+M.Tech,Finance,9.73,"Verilog, RTOS, Electronics, C",Embedded Systems Engineer
+B.Tech,Electronics,9.15,"Verilog, RTOS, Electronics, Accounting",Embedded Systems Engineer
+MBA,Civil,7.73,"C++, Verilog, RTOS, Communication",Embedded Systems Engineer
+M.Tech,Finance,8.13,"RTOS, C++, Microcontrollers, Electronics, Python, Excel",Embedded Systems Engineer
+M.Sc,Mechanical,7.09,"C, Python, Microcontrollers, Verilog",Embedded Systems Engineer
+MBA,Business,6.47,"Microcontrollers, Electronics, C++",Embedded Systems Engineer
+B.Tech,Finance,9.17,"Electronics, RTOS, Microcontrollers, Verilog, Python",Embedded Systems Engineer
+MBA,Finance,8.4,"Python, RTOS, Verilog, Electronics",Embedded Systems Engineer
+B.Tech,Electronics,6.46,"Electronics, C++, C",Embedded Systems Engineer
+M.Sc,Business,9.0,"C, Electronics, Python",Embedded Systems Engineer
+B.Tech,Business,8.3,"C++, Electronics, Python",Embedded Systems Engineer
+B.Tech,Business,7.64,"Microcontrollers, Electronics, C++, Python, Finance",Embedded Systems Engineer
+M.Tech,Computer Science,6.94,"Excel, Communication, Financial Modeling, Python",Financial Analyst
+B.Tech,Mechanical,8.22,"Financial Modeling, Python, Statistics, Communication, Mechanics",Financial Analyst
+B.Tech,Electronics,6.13,"Python, Accounting, Excel, Financial Modeling, Statistics, Matlab",Financial Analyst
+M.Tech,Finance,8.95,"Statistics, Communication, Excel, Financial Modeling, Git",Financial Analyst
+B.Sc,Civil,9.08,"Financial Modeling, Accounting, Communication",Financial Analyst
+MBA,Mechanical,9.76,"Python, Communication, Statistics",Financial Analyst
+B.Tech,Business,6.91,"Communication, Statistics, Excel, Accounting",Financial Analyst
+M.Tech,Civil,8.85,"Statistics, Excel, Financial Modeling, Accounting, Python",Financial Analyst
+B.Sc,Mechanical,9.36,"Statistics, Excel, Communication",Financial Analyst
+B.Tech,Computer Science,8.14,"Financial Modeling, Python, Statistics, Excel, Accounting, Communication",Financial Analyst
+B.Tech,Civil,8.81,"Communication, Financial Modeling, Accounting, Excel, Python",Financial Analyst
+M.Sc,Civil,7.79,"Financial Modeling, Accounting, Python",Financial Analyst
+B.Sc,Computer Science,6.91,"Communication, Statistics, Financial Modeling, Lean Manufacturing",Financial Analyst
+M.Tech,Mechanical,6.98,"Financial Modeling, Python, Communication, Statistics",Financial Analyst
+M.Sc,Business,9.31,"Python, Statistics, Financial Modeling",Financial Analyst
+MBA,Civil,8.67,"Python, Statistics, Accounting",Financial Analyst
+M.Tech,Electronics,8.83,"Python, Financial Modeling, Statistics, Accounting, Communication",Financial Analyst
+B.Tech,Finance,6.73,"Accounting, Excel, Financial Modeling, Statistics",Financial Analyst
+B.Sc,Electronics,7.62,"Python, Statistics, Communication, Excel",Financial Analyst
+MBA,Mechanical,9.46,"Accounting, Statistics, Python, Communication",Financial Analyst
+B.Sc,Electronics,6.65,"Statistics, Excel, Accounting, Communication, Financial Modeling",Financial Analyst
+M.Tech,Civil,6.81,"Communication, Financial Modeling, Python",Financial Analyst
+MBA,Electronics,6.74,"Python, Financial Modeling, Statistics",Financial Analyst
+MBA,Computer Science,7.55,"Financial Modeling, Python, Accounting, SolidWorks",Financial Analyst
+M.Tech,Mechanical,6.63,"Python, Statistics, Communication, Lean Manufacturing",Financial Analyst
+B.Tech,Electronics,6.38,"Communication, Excel, Accounting, RTOS",Financial Analyst
+M.Tech,Civil,9.13,"Python, Statistics, Communication",Financial Analyst
+M.Tech,Civil,6.22,"Accounting, Excel, Communication",Financial Analyst
+M.Sc,Electronics,9.48,"Accounting, Python, Communication, Statistics",Financial Analyst
+MBA,Mechanical,6.17,"Excel, Communication, Python, Statistics, C++",Financial Analyst
+M.Tech,Computer Science,6.33,"Financial Modeling, Statistics, Excel, Accounting",Financial Analyst
+MBA,Mechanical,8.11,"Statistics, Accounting, Financial Modeling, Excel, Python",Financial Analyst
+M.Sc,Civil,6.5,"Statistics, Accounting, Communication, Python",Financial Analyst
+B.Tech,Electronics,8.09,"Statistics, Python, Excel, Accounting, Excel",Financial Analyst
+M.Tech,Computer Science,6.85,"Excel, Python, Communication, Financial Modeling, Linux",Financial Analyst
+B.Sc,Computer Science,8.42,"Communication, Statistics, Financial Modeling, Accounting, Python",Financial Analyst
+B.Sc,Civil,9.28,"Excel, Financial Modeling, Python",Financial Analyst
+B.Tech,Electronics,7.11,"Financial Modeling, Excel, Python, Accounting",Financial Analyst
+MBA,Computer Science,7.54,"Python, Communication, Statistics, Accounting",Financial Analyst
+M.Sc,Business,8.09,"Communication, Python, Excel, Financial Modeling, Accounting",Financial Analyst
+B.Tech,Civil,7.24,"Accounting, Financial Modeling, Excel, CNC",Financial Analyst
+M.Tech,Computer Science,6.71,"Financial Modeling, Accounting, Excel, Python, Statistics",Financial Analyst
+MBA,Computer Science,8.57,"Excel, Accounting, Python",Financial Analyst
+B.Sc,Electronics,6.7,"Communication, Python, Statistics, Accounting, Excel",Financial Analyst
+B.Sc,Computer Science,7.7,"Statistics, Accounting, Financial Modeling",Financial Analyst
+B.Tech,Finance,8.5,"Excel, Statistics, Accounting, Python",Financial Analyst
+B.Tech,Computer Science,6.79,"Financial Modeling, Python, Excel, Accounting, Communication",Financial Analyst
+B.Tech,Civil,6.59,"Statistics, Accounting, Python, Financial Modeling",Financial Analyst
+M.Tech,Mechanical,9.44,"Excel, Communication, Financial Modeling, Python",Financial Analyst
+M.Tech,Business,6.61,"Communication, Financial Modeling, Python",Financial Analyst
+MBA,Business,8.85,"Statistics, Communication, Excel",Financial Analyst
+B.Tech,Electronics,7.19,"Excel, Accounting, Communication, Statistics",Financial Analyst
+B.Tech,Finance,7.18,"Financial Modeling, Excel, Accounting",Financial Analyst
+MBA,Business,7.75,"Statistics, Python, Accounting, Excel, Financial Modeling, Git",Financial Analyst
+M.Tech,Civil,7.77,"Excel, Communication, Python, Statistics, Financial Modeling, Materials",Financial Analyst
+M.Sc,Computer Science,8.01,"Excel, Communication, Python",Financial Analyst
+M.Sc,Finance,6.88,"Communication, Python, Accounting",Financial Analyst
+MBA,Mechanical,8.55,"Accounting, Statistics, Excel, Communication, Python",Financial Analyst
+MBA,Electronics,6.81,"Python, Excel, Statistics, Communication, Algorithms",Financial Analyst
+B.Tech,Civil,7.49,"Accounting, Python, Financial Modeling",Financial Analyst
+M.Sc,Electronics,8.47,"Python, Excel, Accounting",Financial Analyst
+B.Tech,Electronics,6.33,"Excel, Statistics, Financial Modeling, Python",Financial Analyst
+M.Sc,Business,8.04,"Communication, Excel, Financial Modeling, Python",Financial Analyst
+B.Tech,Finance,7.41,"Python, Accounting, Statistics, Communication, Excel, CAD",Financial Analyst
+B.Tech,Business,9.44,"Excel, Communication, Accounting, Statistics",Financial Analyst
+M.Sc,Mechanical,7.36,"Excel, Accounting, Financial Modeling, Statistics, SolidWorks",Financial Analyst
+B.Sc,Computer Science,8.5,"Python, Accounting, Excel",Financial Analyst
+B.Sc,Finance,7.37,"Accounting, Financial Modeling, Statistics, Verilog",Financial Analyst
+B.Sc,Mechanical,8.51,"Excel, Accounting, Communication, Statistics, Python",Financial Analyst
+B.Tech,Civil,9.2,"Financial Modeling, Accounting, Communication, Statistics, Python",Financial Analyst
+B.Sc,Electronics,9.37,"Excel, Statistics, Accounting, Communication",Financial Analyst
+M.Sc,Mechanical,7.89,"Python, Communication, Excel, Accounting",Financial Analyst
+M.Tech,Mechanical,6.56,"Statistics, Communication, Python, Accounting, Financial Modeling",Financial Analyst
+M.Tech,Civil,9.0,"Accounting, Python, Communication",Financial Analyst
+M.Tech,Civil,9.15,"Communication, Excel, Financial Modeling",Financial Analyst
+MBA,Finance,6.89,"Statistics, Accounting, Financial Modeling, Communication",Financial Analyst
+M.Tech,Electronics,7.06,"Communication, Financial Modeling, Accounting, Statistics",Financial Analyst
+B.Sc,Finance,6.56,"Statistics, Accounting, Financial Modeling, Communication, Excel",Financial Analyst
+MBA,Mechanical,8.53,"Python, Excel, Accounting, Communication, CAD",Financial Analyst
+M.Tech,Finance,6.4,"Python, Statistics, Excel, Matlab",Financial Analyst
+B.Sc,Mechanical,6.37,"Statistics, Python, Communication, Accounting",Financial Analyst
+B.Sc,Business,7.19,"Accounting, Communication, Excel",Financial Analyst
+M.Sc,Civil,9.35,"Python, Financial Modeling, Accounting, Statistics, Excel",Financial Analyst
+MBA,Civil,8.46,"Python, Accounting, Financial Modeling",Financial Analyst
+B.Tech,Business,7.22,"Communication, Python, Excel, Statistics",Financial Analyst
+M.Tech,Finance,8.7,"Statistics, Python, Accounting, Excel, Communication",Financial Analyst
+B.Tech,Finance,7.4,"Python, Financial Modeling, Accounting, Excel, Algorithms",Financial Analyst
+MBA,Civil,8.24,"Accounting, Financial Modeling, Communication, Excel",Financial Analyst
+MBA,Computer Science,9.59,"Excel, Accounting, Statistics, Communication",Financial Analyst
+B.Sc,Business,9.72,"Communication, Python, Accounting, Statistics",Financial Analyst
+B.Sc,Finance,9.06,"Excel, Accounting, Python, Financial Modeling",Financial Analyst
+MBA,Finance,9.65,"Statistics, Excel, Communication, Excel",Financial Analyst
+M.Sc,Mechanical,8.23,"Statistics, Accounting, Python, Financial Modeling, Communication",Financial Analyst
+B.Sc,Computer Science,8.35,"Communication, Excel, Accounting",Financial Analyst
+B.Sc,Finance,9.58,"Excel, Financial Modeling, Statistics, Python, Communication",Financial Analyst
+MBA,Civil,7.86,"Excel, Statistics, Python, Communication, Financial Modeling, Java",Financial Analyst
+MBA,Computer Science,7.19,"Financial Modeling, Statistics, Python, Excel, Accounting",Financial Analyst
+MBA,Mechanical,8.61,"Statistics, Excel, Communication, Accounting, Financial Modeling",Financial Analyst
+M.Sc,Finance,7.03,"Python, Financial Modeling, Accounting",Financial Analyst
+B.Sc,Business,9.11,"Python, Accounting, Communication, Financial Modeling, Excel",Financial Analyst
+B.Tech,Finance,9.01,"Finance, Communication, Excel",Investment Banker
+M.Sc,Mechanical,8.58,"Communication, Excel, M&A, Valuation, CAD",Investment Banker
+MBA,Computer Science,6.8,"Communication, M&A, Accounting, Valuation, Excel",Investment Banker
+B.Tech,Computer Science,9.08,"Communication, M&A, Finance",Investment Banker
+M.Tech,Civil,8.97,"Finance, Valuation, Communication, M&A, Accounting",Investment Banker
+B.Tech,Finance,6.36,"Valuation, Communication, Excel, Finance",Investment Banker
+M.Sc,Business,9.79,"Accounting, Excel, Finance, Valuation",Investment Banker
+MBA,Civil,6.96,"Valuation, M&A, Accounting, Excel, Finance",Investment Banker
+MBA,Civil,9.03,"Excel, Finance, M&A, Accounting, Python",Investment Banker
+M.Sc,Computer Science,8.21,"Valuation, Excel, M&A, Communication, Accounting, Excel",Investment Banker
+M.Sc,Finance,7.37,"Accounting, Valuation, Communication, M&A, Finance",Investment Banker
+M.Sc,Electronics,6.37,"Valuation, Finance, Excel",Investment Banker
+MBA,Mechanical,6.43,"Finance, Excel, Accounting, M&A, Valuation",Investment Banker
+B.Tech,Business,9.54,"M&A, Valuation, Excel, Accounting, Accounting",Investment Banker
+B.Tech,Mechanical,6.09,"Accounting, Communication, Valuation, Excel, M&A",Investment Banker
+MBA,Finance,8.95,"Communication, Finance, Excel",Investment Banker
+B.Tech,Computer Science,8.9,"Excel, Communication, Valuation, Accounting",Investment Banker
+M.Sc,Mechanical,7.67,"Valuation, Finance, Accounting, M&A, Excel",Investment Banker
+B.Sc,Civil,6.4,"Excel, M&A, Communication, Finance",Investment Banker
+M.Tech,Mechanical,9.11,"Communication, Accounting, M&A, Finance",Investment Banker
+B.Tech,Business,9.33,"Excel, Valuation, M&A",Investment Banker
+B.Sc,Civil,9.52,"M&A, Finance, Accounting, Valuation",Investment Banker
+M.Tech,Civil,6.96,"Communication, Excel, M&A, Valuation, Finance",Investment Banker
+B.Tech,Computer Science,8.94,"M&A, Accounting, Finance, Valuation",Investment Banker
+MBA,Business,8.33,"Excel, Finance, Communication, Accounting",Investment Banker
+B.Sc,Computer Science,6.18,"Communication, M&A, Finance",Investment Banker
+MBA,Business,8.8,"Finance, M&A, Communication, Accounting",Investment Banker
+MBA,Mechanical,8.12,"Valuation, Accounting, Finance",Investment Banker
+M.Sc,Mechanical,9.63,"Communication, Valuation, Accounting, Finance",Investment Banker
+MBA,Business,8.44,"Valuation, M&A, Accounting",Investment Banker
+M.Sc,Electronics,8.26,"Accounting, Excel, Finance, Valuation, Communication",Investment Banker
+B.Tech,Civil,7.16,"Valuation, M&A, Excel",Investment Banker
+MBA,Mechanical,7.22,"Accounting, Communication, Finance, Excel",Investment Banker
+MBA,Finance,8.02,"Valuation, Communication, Finance, Accounting, M&A",Investment Banker
+M.Tech,Mechanical,7.41,"Communication, M&A, Finance, Excel",Investment Banker
+MBA,Electronics,8.48,"Valuation, Finance, Communication, Accounting, SQL",Investment Banker
+B.Sc,Computer Science,9.35,"Valuation, Excel, Finance, M&A, Communication, Python",Investment Banker
+MBA,Mechanical,8.29,"Accounting, Finance, Excel, Communication, Valuation",Investment Banker
+M.Tech,Electronics,7.4,"Communication, Finance, Excel, M&A, Python",Investment Banker
+MBA,Civil,8.15,"Valuation, Accounting, M&A, Lean Manufacturing",Investment Banker
+B.Tech,Computer Science,9.24,"Accounting, M&A, Valuation, Excel",Investment Banker
+B.Tech,Business,9.07,"Accounting, Valuation, Finance",Investment Banker
+MBA,Computer Science,9.73,"Excel, M&A, Communication",Investment Banker
+M.Sc,Business,8.68,"Finance, M&A, Communication, Accounting, Excel",Investment Banker
+M.Sc,Mechanical,8.56,"Valuation, Accounting, Communication, Finance",Investment Banker
+B.Sc,Business,9.24,"Excel, Finance, Valuation, Accounting, M&A",Investment Banker
+MBA,Civil,6.06,"M&A, Communication, Excel, Finance, Valuation",Investment Banker
+B.Tech,Business,6.45,"Communication, Valuation, Accounting, Finance, M&A",Investment Banker
+B.Tech,Business,7.98,"Finance, Excel, Communication, Valuation",Investment Banker
+MBA,Electronics,8.64,"M&A, Accounting, Finance, Communication, Lean Manufacturing",Investment Banker
+B.Tech,Mechanical,6.5,"Accounting, Excel, Finance, M&A, Valuation",Investment Banker
+B.Tech,Computer Science,8.41,"Accounting, Valuation, Communication",Investment Banker
+M.Tech,Mechanical,9.03,"Accounting, Communication, Finance, Mechanics",Investment Banker
+B.Sc,Business,7.7,"Valuation, Accounting, Finance, Excel",Investment Banker
+B.Tech,Electronics,8.05,"Excel, Accounting, Valuation, Communication, M&A",Investment Banker
+M.Sc,Business,8.39,"Communication, Accounting, M&A",Investment Banker
+B.Tech,Electronics,8.23,"Communication, M&A, Accounting",Investment Banker
+M.Tech,Electronics,7.62,"M&A, Finance, Accounting, Valuation, Excel",Investment Banker
+M.Sc,Mechanical,8.55,"Accounting, M&A, Excel, Git",Investment Banker
+B.Sc,Civil,8.57,"Communication, Accounting, Finance, Excel, Valuation",Investment Banker
+M.Sc,Electronics,9.51,"Valuation, Communication, M&A, Excel, Accounting",Investment Banker
+MBA,Electronics,6.53,"Accounting, Excel, Valuation",Investment Banker
+B.Tech,Civil,8.89,"M&A, Communication, Valuation, Accounting",Investment Banker
+MBA,Electronics,8.56,"Valuation, M&A, Excel, Accounting",Investment Banker
+M.Sc,Business,9.29,"Excel, Communication, M&A, Valuation",Investment Banker
+M.Sc,Mechanical,6.16,"Valuation, Accounting, Excel, M&A, Communication",Investment Banker
+B.Tech,Finance,6.79,"M&A, Communication, Valuation, Accounting",Investment Banker
+MBA,Electronics,8.79,"Finance, Excel, Communication, Accounting, Valuation, AutoCAD",Investment Banker
+M.Tech,Computer Science,9.65,"M&A, Accounting, Communication, Finance, Valuation",Investment Banker
+B.Tech,Business,7.58,"Communication, Excel, Accounting, Valuation, M&A",Investment Banker
+M.Tech,Electronics,6.55,"Accounting, Communication, Finance, M&A, Excel",Investment Banker
+B.Tech,Civil,6.17,"M&A, Valuation, Communication, Excel",Investment Banker
+B.Sc,Finance,7.08,"Excel, Accounting, M&A",Investment Banker
+M.Tech,Business,7.79,"Excel, M&A, Accounting, Communication",Investment Banker
+MBA,Mechanical,7.08,"Excel, M&A, Valuation, Communication, Finance",Investment Banker
+B.Tech,Mechanical,8.53,"Accounting, Excel, Finance, M&A, Valuation",Investment Banker
+M.Tech,Business,7.08,"Valuation, Excel, Communication, Accounting",Investment Banker
+MBA,Electronics,8.93,"Excel, Accounting, Finance",Investment Banker
+M.Sc,Computer Science,8.31,"Accounting, Valuation, M&A",Investment Banker
+M.Sc,Business,8.68,"M&A, Accounting, Valuation, Excel, Accounting",Investment Banker
+M.Sc,Finance,8.64,"Finance, Communication, Excel",Investment Banker
+M.Tech,Mechanical,7.27,"Excel, Finance, Valuation, Accounting, M&A, Verilog",Investment Banker
+M.Sc,Finance,8.83,"Valuation, M&A, Finance",Investment Banker
+M.Sc,Business,8.29,"Valuation, Finance, M&A, Communication",Investment Banker
+M.Tech,Civil,6.25,"M&A, Communication, Valuation",Investment Banker
+M.Sc,Civil,6.18,"Finance, Accounting, Valuation, Excel, M&A",Investment Banker
+M.Tech,Civil,7.91,"Accounting, Communication, Excel, Mechanics",Investment Banker
+M.Tech,Finance,8.58,"Accounting, Communication, Finance, Valuation, M&A",Investment Banker
+B.Tech,Mechanical,9.19,"Accounting, Communication, Finance, Lean Manufacturing",Investment Banker
+B.Sc,Computer Science,7.63,"Communication, Excel, Accounting",Investment Banker
+MBA,Civil,8.91,"Excel, M&A, Valuation, Accounting, Statistics",Investment Banker
+MBA,Finance,8.66,"M&A, Excel, Valuation, Finance, Accounting",Investment Banker
+B.Sc,Computer Science,6.14,"M&A, Accounting, Communication, Excel",Investment Banker
+B.Tech,Mechanical,8.07,"Finance, Accounting, Excel, M&A",Investment Banker
+M.Sc,Mechanical,8.49,"Valuation, Accounting, Excel",Investment Banker
+B.Tech,Civil,7.99,"Valuation, M&A, Communication, Accounting, Excel",Investment Banker
+M.Tech,Business,8.63,"Finance, Valuation, Communication, Excel, M&A",Investment Banker
+MBA,Electronics,7.25,"Accounting, Communication, Excel",Investment Banker
+B.Sc,Civil,7.29,"Excel, Valuation, Finance, Accounting",Investment Banker
+M.Sc,Electronics,6.42,"Communication, Accounting, Valuation, M&A",Investment Banker
+MBA,Business,7.49,"SolidWorks, Matlab, AutoCAD, Excel, Lean Manufacturing, Materials",Manufacturing Engineer
+B.Sc,Computer Science,6.12,"SolidWorks, Matlab, CNC",Manufacturing Engineer
+B.Sc,Electronics,8.46,"AutoCAD, CNC, Excel",Manufacturing Engineer
+MBA,Computer Science,8.9,"SolidWorks, Matlab, Excel, Lean Manufacturing, CNC",Manufacturing Engineer
+MBA,Electronics,6.13,"CNC, Lean Manufacturing, Matlab, SolidWorks, AutoCAD",Manufacturing Engineer
+M.Tech,Electronics,6.51,"Lean Manufacturing, Matlab, Excel, SolidWorks, CNC, Microcontrollers",Manufacturing Engineer
+B.Tech,Business,6.75,"AutoCAD, SolidWorks, Excel, Matlab, CNC",Manufacturing Engineer
+M.Tech,Computer Science,6.77,"AutoCAD, CNC, Matlab, Electronics",Manufacturing Engineer
+M.Tech,Mechanical,9.22,"Lean Manufacturing, SolidWorks, AutoCAD, Matlab",Manufacturing Engineer
+M.Tech,Mechanical,9.45,"AutoCAD, Lean Manufacturing, Excel",Manufacturing Engineer
+MBA,Electronics,6.05,"Excel, SolidWorks, Matlab, CNC, Lean Manufacturing, Electronics",Manufacturing Engineer
+B.Tech,Electronics,6.62,"Matlab, SolidWorks, AutoCAD, Excel, Lean Manufacturing",Manufacturing Engineer
+B.Sc,Finance,9.0,"Lean Manufacturing, Excel, Matlab, CNC, AutoCAD",Manufacturing Engineer
+B.Tech,Business,6.68,"Lean Manufacturing, AutoCAD, Matlab, Excel",Manufacturing Engineer
+MBA,Electronics,6.92,"Matlab, Lean Manufacturing, Excel, AutoCAD",Manufacturing Engineer
+MBA,Mechanical,7.76,"AutoCAD, CNC, Matlab, Excel",Manufacturing Engineer
+B.Sc,Mechanical,7.24,"Lean Manufacturing, CNC, Matlab",Manufacturing Engineer
+M.Tech,Electronics,8.47,"Matlab, CNC, AutoCAD, Excel, Lean Manufacturing",Manufacturing Engineer
+M.Sc,Mechanical,9.3,"SolidWorks, AutoCAD, Matlab, CNC, Excel",Manufacturing Engineer
+M.Sc,Business,8.38,"Excel, CNC, SolidWorks",Manufacturing Engineer
+MBA,Electronics,8.14,"Excel, CNC, SolidWorks, Lean Manufacturing",Manufacturing Engineer
+B.Sc,Finance,8.84,"CNC, Lean Manufacturing, AutoCAD",Manufacturing Engineer
+M.Tech,Business,7.46,"CNC, SolidWorks, Excel, AutoCAD, Lean Manufacturing",Manufacturing Engineer
+MBA,Civil,8.62,"Excel, CNC, Lean Manufacturing, SolidWorks",Manufacturing Engineer
+M.Sc,Mechanical,9.09,"Lean Manufacturing, SolidWorks, Matlab, CNC, AutoCAD, Java",Manufacturing Engineer
+B.Sc,Finance,7.14,"CNC, Excel, AutoCAD, Lean Manufacturing, Matlab",Manufacturing Engineer
+M.Sc,Civil,6.61,"Lean Manufacturing, Matlab, Excel, CNC",Manufacturing Engineer
+M.Tech,Electronics,9.52,"Lean Manufacturing, Excel, SolidWorks, Financial Modeling",Manufacturing Engineer
+B.Tech,Finance,7.36,"SolidWorks, CNC, Lean Manufacturing, Matlab, Git",Manufacturing Engineer
+M.Tech,Electronics,9.59,"Lean Manufacturing, Matlab, SolidWorks",Manufacturing Engineer
+M.Sc,Business,6.11,"Lean Manufacturing, Excel, SolidWorks, Matlab, AutoCAD",Manufacturing Engineer
+M.Sc,Finance,6.42,"Lean Manufacturing, CNC, AutoCAD, Excel, Matlab",Manufacturing Engineer
+B.Sc,Computer Science,8.13,"CNC, Excel, SolidWorks, Statistics",Manufacturing Engineer
+B.Sc,Electronics,6.22,"AutoCAD, Matlab, CNC, Communication",Manufacturing Engineer
+B.Sc,Civil,8.46,"Matlab, CNC, SolidWorks",Manufacturing Engineer
+M.Sc,Computer Science,8.18,"CNC, AutoCAD, SolidWorks, Lean Manufacturing, Matlab",Manufacturing Engineer
+M.Tech,Mechanical,7.09,"CNC, AutoCAD, Matlab, Lean Manufacturing, SolidWorks, CAD",Manufacturing Engineer
+MBA,Computer Science,6.79,"AutoCAD, Lean Manufacturing, Excel, Matlab, CNC",Manufacturing Engineer
+M.Sc,Business,9.53,"AutoCAD, SolidWorks, Matlab",Manufacturing Engineer
+MBA,Civil,9.33,"CNC, SolidWorks, Excel",Manufacturing Engineer
+M.Sc,Civil,7.52,"Matlab, AutoCAD, SolidWorks",Manufacturing Engineer
+M.Tech,Electronics,6.14,"Matlab, Excel, SolidWorks, AutoCAD",Manufacturing Engineer
+B.Sc,Finance,8.32,"SolidWorks, CNC, Lean Manufacturing, Excel, CAD",Manufacturing Engineer
+M.Sc,Civil,6.91,"Matlab, CNC, Excel",Manufacturing Engineer
+MBA,Business,9.5,"Excel, Lean Manufacturing, AutoCAD, SolidWorks, Matlab",Manufacturing Engineer
+B.Tech,Civil,7.02,"Excel, CNC, AutoCAD",Manufacturing Engineer
+B.Sc,Electronics,6.47,"SolidWorks, Lean Manufacturing, AutoCAD",Manufacturing Engineer
+M.Sc,Electronics,7.03,"Excel, Matlab, Lean Manufacturing, SolidWorks, CNC",Manufacturing Engineer
+B.Sc,Computer Science,7.26,"CNC, Matlab, Excel, SolidWorks, AutoCAD",Manufacturing Engineer
+MBA,Business,9.54,"AutoCAD, SolidWorks, CNC",Manufacturing Engineer
+M.Sc,Mechanical,8.83,"Matlab, Excel, AutoCAD, CNC, Lean Manufacturing",Manufacturing Engineer
+B.Tech,Computer Science,8.5,"Excel, AutoCAD, Matlab, Lean Manufacturing, SolidWorks, Financial Modeling",Manufacturing Engineer
+M.Tech,Business,7.95,"Matlab, Excel, Lean Manufacturing, SolidWorks, CNC",Manufacturing Engineer
+M.Tech,Business,6.37,"Excel, Matlab, CNC, Lean Manufacturing",Manufacturing Engineer
+M.Sc,Business,9.25,"AutoCAD, Matlab, SolidWorks",Manufacturing Engineer
+B.Sc,Business,9.33,"Matlab, Excel, AutoCAD, SolidWorks, CNC",Manufacturing Engineer
+B.Tech,Electronics,9.61,"Excel, Matlab, CNC",Manufacturing Engineer
+B.Tech,Computer Science,9.59,"CNC, SolidWorks, Lean Manufacturing, Excel, AutoCAD",Manufacturing Engineer
+MBA,Civil,9.04,"CNC, Excel, AutoCAD",Manufacturing Engineer
+B.Sc,Civil,8.78,"Excel, SolidWorks, CNC, Lean Manufacturing",Manufacturing Engineer
+B.Sc,Mechanical,6.24,"CNC, SolidWorks, Lean Manufacturing",Manufacturing Engineer
+B.Tech,Finance,7.08,"SolidWorks, Excel, CNC, CAD",Manufacturing Engineer
+M.Sc,Finance,7.97,"CNC, AutoCAD, Lean Manufacturing, SolidWorks, Matlab",Manufacturing Engineer
+M.Sc,Computer Science,6.78,"CNC, AutoCAD, Matlab, Lean Manufacturing, SolidWorks",Manufacturing Engineer
+B.Sc,Computer Science,8.13,"Matlab, Excel, CNC, AutoCAD",Manufacturing Engineer
+MBA,Computer Science,7.29,"Excel, AutoCAD, Lean Manufacturing, CNC, Matlab",Manufacturing Engineer
+M.Sc,Electronics,8.47,"Matlab, Excel, SolidWorks, AutoCAD, CNC, Matlab",Manufacturing Engineer
+MBA,Mechanical,6.68,"Matlab, CNC, Lean Manufacturing, SolidWorks",Manufacturing Engineer
+B.Sc,Electronics,7.35,"Matlab, CNC, SolidWorks, RTOS",Manufacturing Engineer
+MBA,Finance,8.31,"Excel, CNC, Matlab",Manufacturing Engineer
+B.Tech,Mechanical,9.55,"AutoCAD, Matlab, CNC, Lean Manufacturing, Excel, Python",Manufacturing Engineer
+B.Sc,Mechanical,6.11,"CNC, Excel, SolidWorks, Matlab, AutoCAD, Linux",Manufacturing Engineer
+MBA,Finance,9.31,"CNC, Excel, Lean Manufacturing",Manufacturing Engineer
+MBA,Mechanical,9.61,"Lean Manufacturing, Matlab, Excel, CNC",Manufacturing Engineer
+M.Tech,Civil,8.6,"Matlab, Lean Manufacturing, AutoCAD, Excel, CNC, Data Structures",Manufacturing Engineer
+B.Sc,Civil,7.13,"SolidWorks, CNC, AutoCAD, Matlab, Excel",Manufacturing Engineer
+B.Tech,Finance,6.64,"Lean Manufacturing, AutoCAD, CNC, SolidWorks, Excel",Manufacturing Engineer
+B.Tech,Electronics,8.16,"Lean Manufacturing, AutoCAD, Excel, Matlab",Manufacturing Engineer
+B.Tech,Civil,9.26,"Matlab, SolidWorks, Excel",Manufacturing Engineer
+M.Tech,Business,9.28,"Matlab, AutoCAD, SolidWorks",Manufacturing Engineer
+M.Tech,Computer Science,6.68,"AutoCAD, Lean Manufacturing, Excel",Manufacturing Engineer
+M.Tech,Business,7.2,"Excel, AutoCAD, Matlab",Manufacturing Engineer
+MBA,Electronics,6.75,"CNC, Matlab, Lean Manufacturing, SolidWorks",Manufacturing Engineer
+M.Tech,Electronics,6.22,"Matlab, CNC, AutoCAD",Manufacturing Engineer
+M.Tech,Electronics,9.22,"Excel, Lean Manufacturing, Matlab, CNC",Manufacturing Engineer
+B.Sc,Finance,6.1,"AutoCAD, Excel, Matlab, Lean Manufacturing",Manufacturing Engineer
+B.Tech,Business,8.1,"Excel, Matlab, CNC, AutoCAD",Manufacturing Engineer
+B.Tech,Business,6.65,"Excel, Lean Manufacturing, AutoCAD, Algorithms",Manufacturing Engineer
+B.Sc,Electronics,7.33,"Lean Manufacturing, AutoCAD, Excel, SolidWorks, CNC, Excel",Manufacturing Engineer
+M.Sc,Electronics,7.02,"Matlab, AutoCAD, Lean Manufacturing, SolidWorks, C",Manufacturing Engineer
+B.Tech,Computer Science,9.03,"Excel, Matlab, AutoCAD, SolidWorks, CNC",Manufacturing Engineer
+M.Tech,Mechanical,8.77,"Lean Manufacturing, SolidWorks, CNC, Python",Manufacturing Engineer
+M.Tech,Finance,8.66,"CNC, Matlab, Excel",Manufacturing Engineer
+B.Sc,Business,6.91,"AutoCAD, SolidWorks, CNC, Lean Manufacturing, Excel",Manufacturing Engineer
+M.Tech,Electronics,6.25,"AutoCAD, CNC, SolidWorks, Lean Manufacturing",Manufacturing Engineer
+MBA,Finance,7.64,"Excel, SolidWorks, AutoCAD",Manufacturing Engineer
+B.Sc,Civil,9.76,"CNC, SolidWorks, AutoCAD, Excel, Matlab",Manufacturing Engineer
+M.Sc,Electronics,9.05,"SolidWorks, CNC, Matlab, Lean Manufacturing",Manufacturing Engineer
+MBA,Civil,9.36,"Matlab, Excel, CNC, SolidWorks, Lean Manufacturing",Manufacturing Engineer
+B.Tech,Business,8.26,"Matlab, Lean Manufacturing, CNC, SolidWorks",Manufacturing Engineer
+B.Tech,Mechanical,8.15,"SolidWorks, Matlab, Mechanics, Thermodynamics",Mechanical Engineer
+M.Tech,Finance,9.69,"Matlab, SolidWorks, Thermodynamics, Mechanics, Materials, M&A",Mechanical Engineer
+B.Tech,Finance,7.22,"Mechanics, CAD, Thermodynamics",Mechanical Engineer
+M.Tech,Mechanical,9.01,"Thermodynamics, Materials, Mechanics, Matlab",Mechanical Engineer
+M.Sc,Business,6.39,"Mechanics, SolidWorks, Matlab, CAD",Mechanical Engineer
+B.Sc,Electronics,6.37,"SolidWorks, Materials, CAD, Data Structures",Mechanical Engineer
+B.Tech,Computer Science,8.84,"SolidWorks, Matlab, Materials, CAD, M&A",Mechanical Engineer
+B.Sc,Civil,9.13,"Matlab, Thermodynamics, Materials, SolidWorks",Mechanical Engineer
+M.Tech,Business,6.84,"Mechanics, SolidWorks, Thermodynamics",Mechanical Engineer
+B.Sc,Business,7.9,"SolidWorks, Thermodynamics, Matlab, Microcontrollers",Mechanical Engineer
+MBA,Civil,8.63,"CAD, Materials, Matlab, Thermodynamics, SolidWorks",Mechanical Engineer
+B.Tech,Civil,6.61,"SolidWorks, CAD, Mechanics, Matlab",Mechanical Engineer
+MBA,Civil,7.74,"CAD, Thermodynamics, Mechanics, Materials",Mechanical Engineer
+M.Sc,Business,6.21,"CAD, Mechanics, Matlab, Thermodynamics, SolidWorks",Mechanical Engineer
+MBA,Business,9.28,"Materials, SolidWorks, Mechanics, Thermodynamics",Mechanical Engineer
+MBA,Electronics,8.91,"Mechanics, Matlab, Materials, Thermodynamics, CAD",Mechanical Engineer
+B.Tech,Mechanical,6.9,"Mechanics, Materials, Matlab, Thermodynamics, SolidWorks",Mechanical Engineer
+B.Tech,Business,7.13,"Thermodynamics, Materials, CAD, Matlab, SolidWorks",Mechanical Engineer
+MBA,Finance,9.0,"Materials, CAD, Matlab, Thermodynamics, SolidWorks",Mechanical Engineer
+B.Sc,Business,8.17,"Mechanics, CAD, Thermodynamics",Mechanical Engineer
+M.Tech,Business,9.22,"SolidWorks, Mechanics, Materials, Thermodynamics, Matlab",Mechanical Engineer
+B.Tech,Electronics,9.55,"Mechanics, SolidWorks, Materials, CAD",Mechanical Engineer
+M.Tech,Computer Science,6.85,"Materials, SolidWorks, Matlab",Mechanical Engineer
+MBA,Civil,9.38,"CAD, Materials, Thermodynamics",Mechanical Engineer
+MBA,Electronics,6.33,"Mechanics, Materials, Matlab, Thermodynamics",Mechanical Engineer
+M.Tech,Mechanical,6.57,"SolidWorks, Matlab, Mechanics, CAD, Thermodynamics",Mechanical Engineer
+MBA,Computer Science,7.59,"CAD, Matlab, Materials, Mechanics",Mechanical Engineer
+MBA,Mechanical,6.66,"Mechanics, Matlab, Thermodynamics, SolidWorks, Materials",Mechanical Engineer
+MBA,Computer Science,9.68,"Mechanics, Matlab, Thermodynamics",Mechanical Engineer
+B.Sc,Mechanical,9.25,"SolidWorks, Matlab, Materials, CAD, Mechanics",Mechanical Engineer
+M.Tech,Civil,9.62,"CAD, Thermodynamics, Mechanics, Materials, SolidWorks",Mechanical Engineer
+MBA,Electronics,8.92,"CAD, SolidWorks, Matlab, Excel",Mechanical Engineer
+B.Tech,Electronics,7.19,"SolidWorks, Mechanics, CAD",Mechanical Engineer
+B.Tech,Business,6.77,"Mechanics, CAD, Matlab, Materials, SolidWorks",Mechanical Engineer
+B.Tech,Finance,7.68,"Mechanics, Materials, CAD, Matlab",Mechanical Engineer
+M.Tech,Computer Science,6.74,"CAD, Mechanics, Thermodynamics, Materials, Matlab",Mechanical Engineer
+B.Tech,Electronics,9.61,"SolidWorks, CAD, Materials, Thermodynamics",Mechanical Engineer
+MBA,Mechanical,9.68,"Matlab, SolidWorks, Mechanics, SolidWorks",Mechanical Engineer
+MBA,Mechanical,6.77,"Matlab, Materials, CAD, Thermodynamics",Mechanical Engineer
+M.Sc,Civil,7.53,"Mechanics, SolidWorks, Materials, Matlab, CAD",Mechanical Engineer
+B.Tech,Computer Science,6.32,"Matlab, CAD, Thermodynamics, Materials",Mechanical Engineer
+B.Sc,Finance,6.58,"Mechanics, CAD, SolidWorks, Thermodynamics, Materials",Mechanical Engineer
+M.Tech,Mechanical,7.86,"Mechanics, Matlab, SolidWorks, CAD",Mechanical Engineer
+M.Sc,Business,8.45,"Materials, SolidWorks, Matlab, Thermodynamics",Mechanical Engineer
+B.Sc,Mechanical,9.52,"Materials, Thermodynamics, Matlab, CAD, SolidWorks",Mechanical Engineer
+B.Tech,Business,7.48,"Thermodynamics, CAD, SolidWorks, Materials, Matlab",Mechanical Engineer
+M.Tech,Electronics,6.45,"Materials, Mechanics, Thermodynamics, SolidWorks, Electronics",Mechanical Engineer
+M.Tech,Finance,8.82,"Mechanics, Materials, Thermodynamics, CAD",Mechanical Engineer
+M.Tech,Business,9.02,"CAD, SolidWorks, Mechanics, Thermodynamics",Mechanical Engineer
+M.Tech,Civil,8.27,"Materials, Mechanics, SolidWorks, Thermodynamics, CNC",Mechanical Engineer
+M.Sc,Mechanical,8.93,"Matlab, Thermodynamics, Materials, CAD, Statistics",Mechanical Engineer
+M.Sc,Civil,8.12,"SolidWorks, Thermodynamics, Materials",Mechanical Engineer
+M.Sc,Computer Science,7.61,"SolidWorks, Mechanics, Thermodynamics, CAD",Mechanical Engineer
+M.Sc,Computer Science,8.89,"CAD, Matlab, Mechanics, Thermodynamics, SolidWorks, AutoCAD",Mechanical Engineer
+MBA,Civil,7.84,"Materials, Matlab, Thermodynamics, SolidWorks, CAD",Mechanical Engineer
+M.Tech,Finance,6.14,"Matlab, Mechanics, Thermodynamics",Mechanical Engineer
+B.Sc,Electronics,8.9,"Thermodynamics, CAD, Matlab, Mechanics",Mechanical Engineer
+M.Sc,Electronics,6.63,"Thermodynamics, SolidWorks, CAD, Matlab",Mechanical Engineer
+B.Tech,Civil,9.8,"Thermodynamics, Materials, Matlab, CAD, SolidWorks",Mechanical Engineer
+M.Tech,Mechanical,8.39,"SolidWorks, Matlab, Mechanics, Thermodynamics, CAD",Mechanical Engineer
+B.Sc,Civil,8.69,"Matlab, Thermodynamics, CAD, Mechanics",Mechanical Engineer
+MBA,Civil,9.4,"CAD, Materials, SolidWorks, Thermodynamics, Finance",Mechanical Engineer
+B.Tech,Electronics,6.29,"Thermodynamics, SolidWorks, Materials, Finance",Mechanical Engineer
+M.Tech,Computer Science,9.62,"Materials, SolidWorks, Matlab",Mechanical Engineer
+M.Tech,Computer Science,8.66,"Mechanics, Thermodynamics, CAD",Mechanical Engineer
+M.Tech,Electronics,6.29,"Materials, CAD, SolidWorks, Mechanics, Matlab",Mechanical Engineer
+M.Sc,Business,8.36,"Matlab, CAD, SolidWorks, Thermodynamics",Mechanical Engineer
+M.Tech,Mechanical,9.68,"Materials, Mechanics, Thermodynamics, SolidWorks",Mechanical Engineer
+M.Tech,Finance,6.96,"SolidWorks, Matlab, Thermodynamics, Mechanics, Materials",Mechanical Engineer
+B.Sc,Computer Science,9.21,"Thermodynamics, Matlab, Materials, Accounting",Mechanical Engineer
+MBA,Business,7.56,"Matlab, Thermodynamics, Materials",Mechanical Engineer
+M.Sc,Mechanical,7.16,"Materials, Mechanics, Matlab, CAD, Accounting",Mechanical Engineer
+B.Tech,Electronics,6.14,"Mechanics, Materials, Matlab",Mechanical Engineer
+M.Tech,Business,8.6,"SolidWorks, Mechanics, CAD, Matlab, Materials",Mechanical Engineer
+B.Sc,Civil,9.78,"Thermodynamics, Mechanics, Materials, Matlab",Mechanical Engineer
+B.Tech,Business,8.64,"Mechanics, CAD, Materials",Mechanical Engineer
+M.Tech,Civil,6.56,"Matlab, Materials, CAD, Mechanics, SolidWorks",Mechanical Engineer
+B.Tech,Finance,6.56,"Mechanics, CAD, Matlab, SolidWorks, Communication",Mechanical Engineer
+B.Sc,Electronics,7.76,"CAD, Matlab, Mechanics",Mechanical Engineer
+B.Sc,Computer Science,8.92,"SolidWorks, CAD, Matlab, Mechanics",Mechanical Engineer
+B.Tech,Civil,6.95,"CAD, Materials, Matlab, SolidWorks, Thermodynamics",Mechanical Engineer
+B.Tech,Business,6.13,"Thermodynamics, Mechanics, CAD, SolidWorks, Data Structures",Mechanical Engineer
+M.Tech,Computer Science,7.25,"CAD, SolidWorks, Thermodynamics, Materials, Accounting",Mechanical Engineer
+MBA,Electronics,8.22,"CAD, Mechanics, Thermodynamics",Mechanical Engineer
+B.Sc,Finance,6.34,"CAD, Materials, Mechanics, Thermodynamics",Mechanical Engineer
+B.Tech,Electronics,8.04,"Mechanics, CAD, SolidWorks, Materials",Mechanical Engineer
+B.Tech,Computer Science,7.45,"Thermodynamics, Matlab, Mechanics, CAD, SolidWorks",Mechanical Engineer
+MBA,Business,9.41,"CAD, Matlab, Materials, Thermodynamics",Mechanical Engineer
+B.Tech,Civil,7.55,"Mechanics, CAD, Matlab, Thermodynamics, SolidWorks",Mechanical Engineer
+MBA,Mechanical,9.3,"Thermodynamics, SolidWorks, CAD, Materials",Mechanical Engineer
+B.Tech,Mechanical,8.23,"Mechanics, Thermodynamics, CAD, SolidWorks, Materials, Accounting",Mechanical Engineer
+B.Sc,Mechanical,6.4,"Mechanics, Materials, SolidWorks",Mechanical Engineer
+M.Tech,Civil,7.35,"SolidWorks, Matlab, Mechanics, Thermodynamics, Materials",Mechanical Engineer
+B.Tech,Computer Science,9.13,"Materials, Matlab, SolidWorks, Mechanics, CAD, Excel",Mechanical Engineer
+MBA,Computer Science,8.09,"SolidWorks, CAD, Thermodynamics, Matlab, C++",Mechanical Engineer
+M.Sc,Computer Science,9.04,"Thermodynamics, Mechanics, CAD",Mechanical Engineer
+B.Sc,Business,7.19,"Thermodynamics, SolidWorks, Materials, Matlab",Mechanical Engineer
+M.Tech,Electronics,7.56,"SolidWorks, Materials, Matlab",Mechanical Engineer
+MBA,Electronics,6.78,"Mechanics, CAD, Thermodynamics, Materials, SolidWorks",Mechanical Engineer
+B.Sc,Mechanical,9.22,"Materials, SolidWorks, Thermodynamics, Matlab",Mechanical Engineer

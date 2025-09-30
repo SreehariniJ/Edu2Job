@@ -1,0 +1,700 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Edu2Job — Login / Register</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    
+    :root {
+      --primary: #4f46e5;
+      --secondary: #7c3aed;
+      --light-bg: #f8fafc;
+      --text-dark: #1e293b;
+      --text-light: #64748b;
+      --error: #dc2626;
+      --success: #16a34a;
+      --warning: #f59e0b;
+    }
+    
+    * {
+      font-family: 'Poppins', sans-serif;
+      box-sizing: border-box;
+    }
+    
+    body {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+    
+    /* Background decoration */
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      z-index: -1;
+    }
+    
+    body::before {
+      width: 300px;
+      height: 300px;
+      top: -100px;
+      left: -100px;
+    }
+    
+    body::after {
+      width: 200px;
+      height: 200px;
+      bottom: -50px;
+      right: -50px;
+    }
+    
+    .form-container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      width: 100%;
+      max-width: 460px;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .form-container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+    
+    .form-header {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      padding: 35px 20px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .form-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+      opacity: 0.3;
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .logo-icon {
+      font-size: 32px;
+      margin-right: 12px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    }
+    
+    .tabs {
+      display: flex;
+      background: #f1f5f9;
+      margin: 0;
+      padding: 6px;
+      position: relative;
+    }
+    
+    .tab-btn {
+      transition: all 0.3s ease;
+      padding: 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      flex: 1;
+      text-align: center;
+      font-weight: 500;
+      position: relative;
+      z-index: 1;
+      color: var(--text-light);
+      background: transparent;
+      border: none;
+    }
+    
+    .tab-btn.active {
+      background: white;
+      color: var(--primary);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      font-weight: 600;
+    }
+    
+    .tab-btn i {
+      transition: transform 0.3s ease;
+    }
+    
+    .tab-btn.active i {
+      transform: scale(1.1);
+    }
+    
+    .form-content {
+      padding: 30px;
+    }
+    
+    .input-group {
+      margin-bottom: 22px;
+      position: relative;
+    }
+    
+    .input-icon {
+      position: absolute;
+      left: 15px;
+      top: 14px;
+      color: var(--text-light);
+      transition: color 0.3s;
+    }
+    
+    .form-input {
+      width: 100%;
+      padding: 14px 15px 14px 50px;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: all 0.3s;
+      background: white;
+    }
+    
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    }
+    
+    .form-input:focus + .input-icon {
+      color: var(--primary);
+    }
+    
+    .show-password {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      color: var(--text-light);
+      font-size: 14px;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    
+    .show-password:hover {
+      color: var(--primary);
+    }
+    
+    .show-password input {
+      accent-color: var(--primary);
+    }
+    
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(79, 70, 229, 0.4);
+    }
+    
+    .submit-btn:hover::before {
+      left: 100%;
+    }
+    
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+    
+    .message {
+      text-align: center;
+      padding: 14px;
+      border-radius: 10px;
+      margin-top: 20px;
+      font-size: 14px;
+      display: none;
+      transition: all 0.3s ease;
+    }
+    
+    .success {
+      background: #f0fdf4;
+      color: var(--success);
+      border: 1px solid rgba(22, 163, 74, 0.2);
+      display: block;
+    }
+    
+    .error {
+      background: #fef2f2;
+      color: var(--error);
+      border: 1px solid rgba(220, 38, 38, 0.2);
+      display: block;
+    }
+    
+    .form-footer {
+      text-align: center;
+      margin-top: 25px;
+      color: var(--text-light);
+      font-size: 14px;
+      padding: 0 30px 25px;
+    }
+    
+    .form-footer a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    
+    .form-footer a:hover {
+      color: var(--secondary);
+      text-decoration: underline;
+    }
+    
+    .password-strength {
+      height: 6px;
+      border-radius: 6px;
+      margin-top: 10px;
+      background: #e2e8f0;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .strength-meter {
+      height: 100%;
+      width: 0%;
+      transition: all 0.3s;
+      border-radius: 6px;
+    }
+    
+    .strength-text {
+      font-size: 12px;
+      margin-top: 5px;
+      color: var(--text-light);
+      text-align: right;
+    }
+    
+    @media (max-width: 480px) {
+      .form-container {
+        border-radius: 16px;
+      }
+      
+      .form-content {
+        padding: 25px;
+      }
+      
+      .form-header {
+        padding: 25px 20px;
+      }
+    }
+    
+    .animate-fade-in {
+      animation: fadeIn 0.5s ease forwards;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .hidden {
+      display: none;
+    }
+    
+    /* Loading animation for buttons */
+    .loading {
+      pointer-events: none;
+      position: relative;
+      color: transparent;
+    }
+    
+    .loading::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      top: 50%;
+      left: 50%;
+      margin-left: -10px;
+      margin-top: -10px;
+      border: 2px solid #ffffff;
+      border-radius: 50%;
+      border-right-color: transparent;
+      animation: spin 0.8s linear infinite;
+    }
+    
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Password requirements tooltip */
+    .password-tooltip {
+      position: absolute;
+      bottom: 100%;
+      left: 0;
+      width: 100%;
+      background: white;
+      border-radius: 8px;
+      padding: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      font-size: 12px;
+      color: var(--text-dark);
+      z-index: 10;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+    
+    .password-tooltip.active {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .password-tooltip ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .password-tooltip li {
+      margin-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .password-tooltip li i {
+      margin-right: 6px;
+      font-size: 10px;
+    }
+    
+    .password-tooltip li.valid {
+      color: var(--success);
+    }
+    
+    .password-tooltip li.invalid {
+      color: var(--text-light);
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <div class="form-header">
+      <div class="logo">
+        <i class="fas fa-graduation-cap logo-icon"></i>
+        <h1 class="text-2xl font-bold">Edu2Job</h1>
+      </div>
+      <p class="text-sm opacity-90">Your pathway from education to employment</p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button id="btnReg" class="tab-btn active">
+        <i class="fas fa-user-plus mr-2"></i>Register
+      </button>
+      <button id="btnLog" class="tab-btn">
+        <i class="fas fa-sign-in-alt mr-2"></i>Login
+      </button>
+    </div>
+
+    <!-- Register Form -->
+    <form id="formReg" class="form-content animate-fade-in">
+      <div class="input-group">
+        <i class="fas fa-user input-icon"></i>
+        <input id="regFull" placeholder="Full name" class="form-input" required />
+      </div>
+      
+      <div class="input-group">
+        <i class="fas fa-envelope input-icon"></i>
+        <input id="regEmail" type="email" placeholder="Email address" class="form-input" required />
+      </div>
+      
+      <div class="input-group">
+        <i class="fas fa-lock input-icon"></i>
+        <input id="regPass" type="password" placeholder="Password" class="form-input" required />
+        <div class="password-strength">
+          <div id="passwordStrength" class="strength-meter"></div>
+        </div>
+        <div id="passwordStrengthText" class="strength-text"></div>
+        
+        <!-- Password requirements tooltip -->
+        <div id="passwordTooltip" class="password-tooltip">
+          <ul>
+            <li id="reqLength" class="invalid"><i class="fas fa-circle"></i> At least 8 characters</li>
+            <li id="reqCase" class="invalid"><i class="fas fa-circle"></i> Upper & lowercase letters</li>
+            <li id="reqNumber" class="invalid"><i class="fas fa-circle"></i> At least one number</li>
+            <li id="reqSpecial" class="invalid"><i class="fas fa-circle"></i> At least one special character</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="show-password">
+        <input id="regShow" type="checkbox" class="mr-2"/>
+        <label for="regShow">Show password</label>
+      </div>
+      
+      <button type="submit" class="submit-btn mt-6">
+        <i class="fas fa-user-plus mr-2"></i>Create Account
+      </button>
+    </form>
+
+    <!-- Login Form -->
+    <form id="formLog" class="form-content animate-fade-in hidden">
+      <div class="input-group">
+        <i class="fas fa-envelope input-icon"></i>
+        <input id="logEmail" type="email" placeholder="Email address" class="form-input" required />
+      </div>
+      
+      <div class="input-group">
+        <i class="fas fa-lock input-icon"></i>
+        <input id="logPass" type="password" placeholder="Password" class="form-input" required />
+      </div>
+      
+      <div class="show-password">
+        <input id="logShow" type="checkbox" class="mr-2"/>
+        <label for="logShow">Show password</label>
+      </div>
+      
+      <div class="text-right mb-4">
+        <a href="#" class="text-sm text-indigo-600 hover:underline">Forgot password?</a>
+      </div>
+      
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-sign-in-alt mr-2"></i>Login to Account
+      </button>
+    </form>
+
+    <div id="msg" class="message"></div>
+    
+    <div class="form-footer">
+      <p>By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</p>
+    </div>
+  </div>
+
+<script>
+const btnReg = document.getElementById("btnReg");
+const btnLog = document.getElementById("btnLog");
+const formReg = document.getElementById("formReg");
+const formLog = document.getElementById("formLog");
+const msg = document.getElementById("msg");
+const passwordStrength = document.getElementById("passwordStrength");
+const passwordStrengthText = document.getElementById("passwordStrengthText");
+const passwordTooltip = document.getElementById("passwordTooltip");
+const regPassInput = document.getElementById("regPass");
+
+// Tab switching with active color
+btnReg.onclick = () => {
+  formReg.classList.remove("hidden");
+  formLog.classList.add("hidden");
+  btnReg.classList.add("active");
+  btnLog.classList.remove("active");
+  msg.className = "message";
+  msg.textContent = "";
+};
+btnLog.onclick = () => {
+  formLog.classList.remove("hidden");
+  formReg.classList.add("hidden");
+  btnLog.classList.add("active");
+  btnReg.classList.remove("active");
+  msg.className = "message";
+  msg.textContent = "";
+};
+
+// Show/hide password
+document.getElementById("regShow").addEventListener("change", e => {
+  document.getElementById("regPass").type = e.target.checked ? "text" : "password";
+});
+document.getElementById("logShow").addEventListener("change", e => {
+  document.getElementById("logPass").type = e.target.checked ? "text" : "password";
+});
+
+// Password strength indicator
+regPassInput.addEventListener("input", function(e) {
+  const password = e.target.value;
+  let strength = 0;
+  
+  // Check password requirements
+  const hasMinLength = password.length >= 8;
+  const hasMixedCase = /([a-z].*[A-Z])|([A-Z].*[a-z])/.test(password);
+  const hasNumbers = /[0-9]/.test(password);
+  const hasSpecialChars = /[!,@,#,$,%,^,&,*,?,_,~]/.test(password);
+  
+  // Update requirement indicators
+  document.getElementById("reqLength").className = hasMinLength ? "valid" : "invalid";
+  document.getElementById("reqCase").className = hasMixedCase ? "valid" : "invalid";
+  document.getElementById("reqNumber").className = hasNumbers ? "valid" : "invalid";
+  document.getElementById("reqSpecial").className = hasSpecialChars ? "valid" : "invalid";
+  
+  if (password.length > 0) {
+    // Length check
+    if (hasMinLength) strength += 25;
+    
+    // Contains both lower and uppercase
+    if (hasMixedCase) strength += 25;
+    
+    // Contains numbers
+    if (hasNumbers) strength += 25;
+    
+    // Contains special characters
+    if (hasSpecialChars) strength += 25;
+  }
+  
+  // Update strength meter
+  passwordStrength.style.width = strength + '%';
+  
+  // Change color and text based on strength
+  let strengthText = "";
+  if (strength < 50) {
+    passwordStrength.style.background = '#ef4444'; // red
+    strengthText = "Weak";
+  } else if (strength < 75) {
+    passwordStrength.style.background = '#f59e0b'; // amber
+    strengthText = "Medium";
+  } else {
+    passwordStrength.style.background = '#10b981'; // green
+    strengthText = "Strong";
+  }
+  
+  passwordStrengthText.textContent = password.length > 0 ? strengthText : "";
+});
+
+// Show password tooltip on focus
+regPassInput.addEventListener("focus", () => {
+  passwordTooltip.classList.add("active");
+});
+
+regPassInput.addEventListener("blur", () => {
+  // Delay hiding to allow clicking on tooltip
+  setTimeout(() => {
+    passwordTooltip.classList.remove("active");
+  }, 200);
+});
+
+// Helper for POST requests
+async function postJson(url, data) {
+  const r = await fetch(url, {
+    method: "POST",
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify(data)
+  });
+  const body = await r.json().catch(()=>({}));
+  return {ok: r.ok, status: r.status, body};
+}
+
+// Form submission with loading state
+function setLoading(button, isLoading) {
+  if (isLoading) {
+    button.classList.add("loading");
+    button.disabled = true;
+  } else {
+    button.classList.remove("loading");
+    button.disabled = false;
+  }
+}
+
+// Register submission
+formReg.addEventListener("submit", async ev => {
+  ev.preventDefault();
+  msg.className = "message";
+  msg.textContent = "";
+  
+  const submitBtn = formReg.querySelector('.submit-btn');
+  setLoading(submitBtn, true);
+  
+  const fullname = document.getElementById("regFull").value.trim();
+  const email = document.getElementById("regEmail").value.trim();
+  const password = document.getElementById("regPass").value;
+  
+  try {
+    const res = await postJson("/api/register", { fullname, email, password });
+    if (res.ok) {
+      msg.textContent = "Registration successful! Please login.";
+      msg.className = "message success";
+      formReg.reset();
+      passwordStrength.style.width = '0%';
+      passwordStrengthText.textContent = "";
+      btnLog.click();
+    } else {
+      msg.textContent = res.body.error || "Registration failed. Please try again.";
+      msg.className = "message error";
+    }
+  } catch (error) {
+    msg.textContent = "Network error. Please check your connection and try again.";
+    msg.className = "message error";
+  } finally {
+    setLoading(submitBtn, false);
+  }
+});
+
+// Login submission
+formLog.addEventListener("submit", async ev => {
+  ev.preventDefault();
+  msg.className = "message";
+  msg.textContent = "";
+  
+  const submitBtn = formLog.querySelector('.submit-btn');
+  setLoading(submitBtn, true);
+  
+  const email = document.getElementById("logEmail").value.trim();
+  const password = document.getElementById("logPass").value;
+  
+  try {
+    const r = await postJson("/api/login", { email, password });
+    if (r.ok) {
+      const token = r.body.token;
+      if (token) localStorage.setItem("token", token);
+      msg.textContent = "Login successful. Redirecting to dashboard...";
+      msg.className = "message success";
+      setTimeout(()=> window.location.href="/dashboard", 700);
+    } else {
+      msg.textContent = r.body.error || "Login failed. Please check your credentials.";
+      msg.className = "message error";
+    }
+  } catch (error) {
+    msg.textContent = "Network error. Please check your connection and try again.";
+    msg.className = "message error";
+  } finally {
+    setLoading(submitBtn, false);
+  }
+});
+</script>
+</body>
+</html>

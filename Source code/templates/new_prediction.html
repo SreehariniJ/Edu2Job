@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CareerPath AI - Professional Career Prediction</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --primary: #4361ee;
+  --primary-light: #4895ef;
+  --primary-dark: #3a56d4;
+  --secondary: #7209b7;
+  --accent: #4cc9f0;
+  --success: #28a745;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #f8f9fa;
+  --dark: #1e293b;
+  --gray: #64748b;
+  --light-gray: #e2e8f0;
+  --border-radius: 12px;
+  --shadow: 0 4px 15px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #f0f4ff 0%, #e6f7ff 100%); color: var(--dark); min-height: 100vh; padding: 20px; display: flex; justify-content: center; align-items: flex-start; }
+.container { max-width: 800px; width: 100%; margin: 0 auto; background: #fff; padding: 40px; border-radius: var(--border-radius); box-shadow: var(--shadow-lg); position: relative; overflow: hidden; }
+.container::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 5px; background: linear-gradient(to right, var(--primary), var(--secondary)); }
+h2 { text-align: center; color: var(--dark); margin-bottom: 30px; font-size: 2rem; font-weight: 700; position: relative; padding-bottom: 15px; }
+h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: linear-gradient(to right, var(--primary), var(--accent)); border-radius: 2px; }
+form { display: flex; flex-direction: column; gap: 20px; }
+.form-group { display: flex; flex-direction: column; gap: 8px; }
+label { font-weight: 600; color: var(--dark); font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+.input-with-icon { position: relative; }
+.input-with-icon i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--gray); z-index: 2; }
+select, input { width: 100%; padding: 14px 15px 14px 45px; border: 2px solid var(--light-gray); border-radius: var(--border-radius); font-size: 16px; transition: var(--transition); background: #fff; position: relative; z-index: 1; font-family: 'Inter', sans-serif; }
+select:focus, input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2); }
+button { padding: 16px; background: linear-gradient(to right, var(--primary), var(--primary-light)); color: #fff; font-size: 16px; font-weight: 600; border: none; border-radius: var(--border-radius); cursor: pointer; transition: var(--transition); display: flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 12px rgba(67, 97, 238, 0.3); margin-top: 10px; font-family: 'Inter', sans-serif; }
+button:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4); }
+button:active { transform: translateY(-1px); }
+#prediction_result { margin-top: 40px; display: none; animation: fadeIn 0.5s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.top-card { background: #fff; padding: 20px; border-radius: var(--border-radius); margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-left: 4px solid var(--primary); transition: var(--transition); }
+.top-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+.top-card h4 { margin: 0 0 10px 0; color: var(--primary); font-size: 1.2rem; }
+.top-card p { margin: 5px 0; color: var(--gray); font-size: 14px; line-height: 1.5; }
+.label { font-weight: 600; color: var(--dark); }
+.confidence-high { color: var(--success); font-weight: 600; display: flex; align-items: center; gap: 5px; }
+.confidence-medium { color: var(--warning); font-weight: 600; display: flex; align-items: center; gap: 5px; }
+.confidence-low { color: var(--danger); font-weight: 600; display: flex; align-items: center; gap: 5px; }
+.skills-autocomplete { position: relative; }
+.autocomplete-list { position: absolute; top: 100%; left: 0; right: 0; background: #fff; border: 1px solid var(--light-gray); max-height: 150px; overflow-y: auto; z-index: 1000; border-radius: 0 0 var(--border-radius) var(--border-radius); box-shadow: 0 4px 12px rgba(0,0,0,0.1); display: none; }
+.autocomplete-list div { padding: 12px 15px; cursor: pointer; border-bottom: 1px solid var(--light-gray); transition: var(--transition); }
+.autocomplete-list div:hover { background: #f0f8ff; }
+.autocomplete-list div:last-child { border-bottom: none; }
+.result-header { background: var(--light); padding: 20px; border-radius: var(--border-radius); margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); }
+.top-role { flex: 1; min-width: 250px; }
+.top-role h3 { font-size: 1.4rem; margin-bottom: 5px; color: var(--dark); }
+.confidence-badge { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 50px; font-size: 0.95rem; font-weight: 600; }
+.confidence-high-badge { background: rgba(40, 167, 69, 0.15); color: var(--success); }
+.confidence-medium-badge { background: rgba(255, 193, 7, 0.15); color: var(--warning); }
+.confidence-low-badge { background: rgba(220, 53, 69, 0.15); color: var(--danger); }
+.suggestions-container { display: grid; grid-template-columns: 1fr; gap: 15px; }
+.back-btn { margin-bottom: 20px; padding: 10px 20px; border-radius: var(--border-radius); background: var(--primary); color: #fff; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; border: none; transition: var(--transition); }
+.back-btn:hover { background: var(--primary-dark); }
+@media (max-width: 768px) {
+  .container { padding: 30px 20px; }
+  h2 { font-size: 1.6rem; }
+  .result-header { flex-direction: column; align-items: flex-start; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <button class="back-btn" onclick="window.location.href='/dashboard'"><i class="fas fa-arrow-left"></i> Back to Dashboard</button>
+  <h2><i class="fas fa-rocket"></i> New Prediction</h2>
+
+  <form id="new_prediction_form">
+    <div class="form-group">
+      <label for="degree"><i class="fas fa-graduation-cap"></i> Degree</label>
+      <div class="input-with-icon">
+        <i class="fas fa-user-graduate"></i>
+        <select id="degree" required><option value="">Select Degree</option></select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="major"><i class="fas fa-book"></i> Major / Specialization</label>
+      <div class="input-with-icon">
+        <i class="fas fa-book-open"></i>
+        <select id="major" required><option value="">Select Major</option></select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="cgpa"><i class="fas fa-chart-line"></i> CGPA / Percentage</label>
+      <div class="input-with-icon">
+        <i class="fas fa-percentage"></i>
+        <input type="number" step="0.01" id="cgpa" placeholder="e.g., 8.5, 85" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="skills"><i class="fas fa-tools"></i> Skills</label>
+      <div class="skills-autocomplete">
+        <div id="skills_tags_container" class="input-with-icon" style="min-height: 50px; display: flex; flex-wrap: wrap; gap: 5px; align-items: center; padding: 5px; border: 2px solid var(--light-gray); border-radius: var(--border-radius); cursor: text;">
+          <input type="text" id="skills" placeholder="Type a skill and press Enter" style="border: none; outline: none; flex: 1; min-width: 120px; font-family: 'Inter';">
+        </div>
+        <div id="autocomplete_list" class="autocomplete-list"></div>
+      </div>
+    </div>
+
+    <button type="submit"><i class="fas fa-search"></i> Predict My Career Path</button>
+  </form>
+
+  <div id="prediction_result">
+    <h3>Prediction Result</h3>
+    <div class="result-header">
+      <div class="top-role">
+        <h3>Top Predicted Role</h3>
+        <p id="predicted_role"></p>
+      </div>
+      <div>
+        <p><strong>Confidence:</strong></p>
+        <span id="confidence" class="confidence-badge confidence-high-badge"><i class="fas fa-chart-line"></i> <span id="confidence-value">85%</span></span>
+      </div>
+    </div>
+
+    <h4>Other Top Suggestions</h4>
+    <div class="suggestions-container" id="top_suggestions"></div>
+  </div>
+</div>
+
+<script>
+let options = {degrees: [], majors: [], skills: []};
+const degreeSelect = document.getElementById("degree");
+const majorSelect = document.getElementById("major");
+const skillsInput = document.getElementById("skills");
+const skillsContainer = document.getElementById("skills_tags_container");
+const autocompleteList = document.getElementById("autocomplete_list");
+let skillTags = [];
+
+async function loadOptions() {
+  try {
+    const res = await fetch("/api/options");
+    const data = await res.json();
+    options = data;
+
+    data.degrees.forEach(d => { const opt = document.createElement("option"); opt.value=d; opt.text=d; degreeSelect.appendChild(opt); });
+    data.majors.forEach(m => { const opt = document.createElement("option"); opt.value=m; opt.text=m; majorSelect.appendChild(opt); });
+  } catch(err){ console.error("Error loading options:", err); }
+}
+
+function renderTags() {
+  skillsContainer.innerHTML = "";
+  skillTags.forEach((tag, index) => {
+    const tagEl = document.createElement("span");
+    tagEl.textContent = tag;
+    tagEl.style.cssText = "background: var(--primary-light); color: white; padding: 5px 10px; border-radius: 20px; display: flex; align-items: center; gap: 5px; font-size: 0.9rem;";
+    const removeBtn = document.createElement("span");
+    removeBtn.innerHTML = "&times;";
+    removeBtn.style.cursor = "pointer";
+    removeBtn.addEventListener("click", () => { skillTags.splice(index, 1); renderTags(); });
+    tagEl.appendChild(removeBtn);
+    skillsContainer.appendChild(tagEl);
+  });
+  skillsContainer.appendChild(skillsInput);
+  skillsInput.value = "";
+  skillsInput.focus();
+}
+
+// Skills input with tags and autocomplete
+skillsInput.addEventListener("keydown", function(e) {
+  if (e.key === "Enter" || e.key === ",") {
+    e.preventDefault();
+    const val = this.value.trim();
+    if(val && !skillTags.includes(val.toLowerCase())) { skillTags.push(val); renderTags(); }
+  } else if(e.key === "Backspace" && !this.value && skillTags.length) { skillTags.pop(); renderTags(); }
+});
+
+skillsInput.addEventListener("input", function() {
+  const val = this.value.toLowerCase();
+  autocompleteList.innerHTML = "";
+  if(!val) { autocompleteList.style.display="none"; return; }
+  const suggestions = options.skills.filter(s => s.toLowerCase().includes(val) && !skillTags.includes(s.toLowerCase()));
+  if(suggestions.length){
+    suggestions.forEach(s => {
+      const div = document.createElement("div");
+      div.textContent = s;
+      div.addEventListener("click", () => { skillTags.push(s); renderTags(); autocompleteList.style.display="none"; });
+      autocompleteList.appendChild(div);
+    });
+    autocompleteList.style.display="block";
+  } else autocompleteList.style.display="none";
+});
+
+document.addEventListener("click", function(e){ if(!skillsContainer.contains(e.target)) autocompleteList.style.display="none"; });
+
+document.getElementById("new_prediction_form").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const degree = degreeSelect.value;
+  const major = majorSelect.value;
+  const cgpa = parseFloat(document.getElementById("cgpa").value) || 0;
+  const skills = skillTags.map(s => s.toLowerCase());
+
+  const token = localStorage.getItem("token");
+  try {
+    const res = await fetch("/api/predict", {
+      method:"POST",
+      headers:{"Content-Type":"application/json","Authorization":"Bearer "+token},
+      body: JSON.stringify({degree, major, cgpa, skills})
+    });
+    const data = await res.json();
+    if(!res.ok){ alert("Prediction failed: "+(data.error||"Unknown")); return; }
+
+    const topRole = data.predicted_role;
+    const topConf = data.confidence;
+    function confClass(conf){ if(conf>=0.75) return "confidence-high"; if(conf>=0.5) return "confidence-medium"; return "confidence-low"; }
+
+    document.getElementById("predicted_role").innerText = topRole;
+    document.getElementById("confidence-value").innerText = (topConf*100).toFixed(2)+"%";
+    const confidenceBadge = document.getElementById("confidence");
+    confidenceBadge.className = "confidence-badge " + (topConf >= 0.75 ? "confidence-high-badge" : topConf >= 0.5 ? "confidence-medium-badge" : "confidence-low-badge");
+
+    const container = document.getElementById("top_suggestions");
+    container.innerHTML = "";
+    function generateReason(role){ 
+      const templates = [
+        `Considering your degree ${degree} and skills ${skills.join(", ") || "core areas"}, ${role} is ideal for impactful projects.`,
+        `Your academic background and skills make ${role} a strategic growth opportunity.`,
+        `Given your CGPA ${cgpa} and skill set, ${role} is promising for career progression.`,
+        `${role} aligns with your strengths and offers paths to excel professionally.`,
+        `${role} maximizes your skills and opens future leadership opportunities.`
+      ];
+      return templates[Math.floor(Math.random()*templates.length)];
+    }
+
+    data.top_suggestions.forEach(s=>{
+      const card = document.createElement("div");
+      card.className="top-card";
+      card.innerHTML = `
+        <h4>${s.role}</h4>
+        <p><span class="label">Confidence:</span> <span class="${confClass(s.confidence)}"><i class="fas fa-chart-line"></i> ${(s.confidence*100).toFixed(2)}%</span></p>
+        <p><span class="label">Reason:</span> ${generateReason(s.role)}</p>
+      `;
+      container.appendChild(card);
+    });
+
+    document.getElementById("prediction_result").style.display="block";
+  } catch(err){ console.error(err); alert("Error connecting to server"); }
+});
+
+loadOptions();
+</script>
+</body>
+</html>

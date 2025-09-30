@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prediction History with Visualizations</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+    body { font-family: 'Inter', sans-serif; background-color: #f4f6f8; margin: 0; padding: 0; }
+    .container { max-width: 1300px; margin: 30px auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+    h2 { text-align: center; color: #333; margin-bottom: 15px; }
+    #backBtn { padding: 10px 20px; background-color: #007bff; color: #fff; border:none; border-radius:8px; cursor:pointer; margin-bottom:20px; }
+    #backBtn:hover { background-color: #0056b3; }
+    #searchInput { width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc; font-size: 16px; }
+    .table-wrapper { max-height: 500px; overflow-y: auto; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 30px; }
+    table { width: 100%; border-collapse: collapse; margin: 0; }
+    th, td { padding: 12px 15px; text-align: left; border-bottom: 1px solid #ddd; }
+    th { background-color: #007bff; color: #fff; cursor: pointer; user-select: none; position: sticky; top: 0; z-index: 2; }
+    tr:hover { background-color: #f1f1f1; }
+    .confidence-high { color: #28a745; font-weight: 600; }
+    .confidence-medium { color: #ffc107; font-weight: 600; }
+    .confidence-low { color: #dc3545; font-weight: 600; }
+    
+    /* Visualization Section */
+    .visualization-section { margin-top: 40px; }
+    .section-title { font-size: 1.5rem; margin-bottom: 20px; color: #333; border-bottom: 2px solid #007bff; padding-bottom: 8px; }
+    .charts-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 25px; margin-bottom: 30px; }
+    .chart-card { background: #fff; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); padding: 20px; }
+    .chart-title { font-size: 1.2rem; margin-bottom: 15px; color: #444; text-align: center; }
+    .chart-container { position: relative; height: 300px; width: 100%; }
+    
+    /* Insights Section */
+    .insights-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
+    .insight-card { background: #fff; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.08); padding: 20px; }
+    .insight-title { font-size: 1.1rem; margin-bottom: 12px; color: #007bff; }
+    .insight-value { font-size: 1.8rem; font-weight: 700; color: #333; margin-bottom: 8px; }
+    .insight-description { color: #666; font-size: 0.9rem; }
+    
+    /* Tabs for Visualization */
+    .tabs { display: flex; margin-bottom: 20px; border-bottom: 1px solid #ddd; }
+    .tab { padding: 10px 20px; cursor: pointer; background: #f8f9fa; border: 1px solid #ddd; border-bottom: none; border-radius: 5px 5px 0 0; margin-right: 5px; }
+    .tab.active { background: #007bff; color: white; }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .charts-container { grid-template-columns: 1fr; }
+        .insights-container { grid-template-columns: 1fr; }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Prediction History</h2>
+    <button id="backBtn">← Back to Dashboard</button>
+    <input type="text" id="searchInput" placeholder="Search by role, degree, major, or skills...">
+
+    <div class="table-wrapper">
+        <table id="history_table">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">#</th>
+                    <th onclick="sortTable(1)">Degree</th>
+                    <th onclick="sortTable(2)">Major</th>
+                    <th onclick="sortTable(3)">CGPA</th>
+                    <th onclick="sortTable(4)">Skills</th>
+                    <th onclick="sortTable(5)">Predicted Role</th>
+                    <th onclick="sortTable(6)">Confidence</th>
+                    <th onclick="sortTable(7)">Time</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+    <!-- Visualization Section -->
+    <div class="visualization-section">
+        <h3 class="section-title">Data Visualizations & Insights</h3>
+        
+        <!-- Tabs for different visualization categories -->
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('overview')">Overview</div>
+            <div class="tab" onclick="switchTab('roles')">Roles Analysis</div>
+            <div class="tab" onclick="switchTab('education')">Education Analysis</div>
+        </div>
+        
+        <!-- Overview Tab -->
+        <div id="overview" class="tab-content active">
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h4 class="chart-title">Prediction Confidence Distribution</h4>
+                    <div class="chart-container">
+                        <canvas id="confidenceChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h4 class="chart-title">Top Predicted Roles</h4>
+                    <div class="chart-container">
+                        <canvas id="rolesChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="insights-container">
+                <div class="insight-card">
+                    <h4 class="insight-title">Total Predictions</h4>
+                    <div class="insight-value" id="totalPredictions">0</div>
+                    <p class="insight-description">Total career predictions made</p>
+                </div>
+                <div class="insight-card">
+                    <h4 class="insight-title">Average Confidence</h4>
+                    <div class="insight-value" id="avgConfidence">0%</div>
+                    <p class="insight-description">Average confidence across all predictions</p>
+                </div>
+                <div class="insight-card">
+                    <h4 class="insight-title">Most Common Role</h4>
+                    <div class="insight-value" id="commonRole">-</div>
+                    <p class="insight-description">Most frequently predicted role</p>
+                </div>
+                <div class="insight-card">
+                    <h4 class="insight-title">Highest Confidence</h4>
+                    <div class="insight-value" id="highestConfidence">0%</div>
+                    <p class="insight-description">Highest confidence prediction</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Roles Analysis Tab -->
+        <div id="roles" class="tab-content">
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h4 class="chart-title">Skills Distribution by Role</h4>
+                    <div class="chart-container">
+                        <canvas id="skillsByRoleChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h4 class="chart-title">CGPA vs Role Confidence</h4>
+                    <div class="chart-container">
+                        <canvas id="cgpaConfidenceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Education Analysis Tab -->
+        <div id="education" class="tab-content">
+            <div class="charts-container">
+                <div class="chart-card">
+                    <h4 class="chart-title">Degree Distribution</h4>
+                    <div class="chart-container">
+                        <canvas id="degreeChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-card">
+                    <h4 class="chart-title">Major Distribution</h4>
+                    <div class="chart-container">
+                        <canvas id="majorChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let historyData = [];
+
+document.getElementById("backBtn").addEventListener("click", () => {
+    window.location.href = "/dashboard";
+});
+
+async function loadHistory() {
+    const token = localStorage.getItem("token");
+    try {
+        const res = await fetch("/api/history", {
+            headers: { "Authorization": "Bearer " + token }
+        });
+        const data = await res.json();
+        if (!res.ok) {
+            alert("Failed to load history: " + (data.error || "Unknown error"));
+            return;
+        }
+
+        historyData = data;
+        const tbody = document.querySelector("#history_table tbody");
+        tbody.innerHTML = "";
+
+        data.forEach((item, idx) => {
+            const tr = document.createElement("tr");
+            const skills = item.skills ? item.skills.split(",").map(s => s.trim()).join(", ") : "-";
+
+            function confClass(conf){
+                if(conf >= 0.75) return 'confidence-high';
+                if(conf >= 0.5) return 'confidence-medium';
+                return 'confidence-low';
+            }
+
+            const dt = new Date(item.created_at + "Z");
+            const formattedTime = dt.toLocaleString(undefined, { dateStyle: 'medium', timeStyle: 'short' });
+
+            tr.innerHTML = `
+                <td>${idx + 1}</td>
+                <td>${item.degree || "-"}</td>
+                <td>${item.major || "-"}</td>
+                <td>${item.cgpa !== null ? item.cgpa.toFixed(2) : "-"}</td>
+                <td>${skills}</td>
+                <td>${item.predicted_role || "-"}</td>
+                <td class="${confClass(item.confidence)}">${item.confidence !== null ? (item.confidence*100).toFixed(2) + "%" : "-"}</td>
+                <td>${formattedTime}</td>
+            `;
+            tbody.appendChild(tr);
+        });
+
+        // Generate visualizations after loading data
+        generateVisualizations();
+        generateInsights();
+
+    } catch(err) {
+        console.error(err);
+        alert("Error fetching history");
+    }
+}
+
+function sortTable(n) {
+    const table = document.getElementById("history_table");
+    let rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+    switching = true;
+    dir = "asc";
+    while (switching) {
+        switching = false;
+        rows = table.rows;
+        for (i = 1; i < rows.length - 1; i++) {
+            shouldSwitch = false;
+            x = rows[i].getElementsByTagName("TD")[n];
+            y = rows[i + 1].getElementsByTagName("TD")[n];
+            let xContent = x.innerText.toLowerCase();
+            let yContent = y.innerText.toLowerCase();
+            if(n === 3 || n === 6){
+                xContent = parseFloat(xContent) || 0;
+                yContent = parseFloat(yContent) || 0;
+            }
+            if (dir === "asc") {
+                if (xContent > yContent) { shouldSwitch = true; break; }
+            } else if (dir === "desc") {
+                if (xContent < yContent) { shouldSwitch = true; break; }
+            }
+        }
+        if (shouldSwitch) {
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            switchcount++;
+        } else {
+            if (switchcount === 0 && dir === "asc") {
+                dir = "desc";
+                switching = true;
+            }
+        }
+    }
+}
+
+document.getElementById("searchInput").addEventListener("input", function() {
+    const filter = this.value.toLowerCase();
+    const rows = document.querySelectorAll("#history_table tbody tr");
+    rows.forEach(row => {
+        row.style.display = Array.from(row.cells).some(cell => cell.textContent.toLowerCase().includes(filter)) ? "" : "none";
+    });
+});
+
+function switchTab(tabName) {
+    // Hide all tab contents
+    document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Remove active class from all tabs
+    document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+    });
+    
+    // Show selected tab content and mark tab as active
+    document.getElementById(tabName).classList.add('active');
+    event.target.classList.add('active');
+}
+
+function generateVisualizations() {
+    if (historyData.length === 0) return;
+    
+    // Prepare data for visualizations
+    const rolesCount = {};
+    const confidenceRanges = { 'High (≥75%)': 0, 'Medium (50-75%)': 0, 'Low (<50%)': 0 };
+    const degreesCount = {};
+    const majorsCount = {};
+    const skillsByRole = {};
+    const roleConfidence = {};
+    
+    let totalConfidence = 0;
+    let highestConfidence = 0;
+    
+    historyData.forEach(item => {
+        // Count roles
+        const role = item.predicted_role || 'Unknown';
+        rolesCount[role] = (rolesCount[role] || 0) + 1;
+        
+        // Track confidence by role
+        if (!roleConfidence[role]) roleConfidence[role] = [];
+        roleConfidence[role].push(item.confidence || 0);
+        
+        // Count confidence ranges
+        const confidence = item.confidence || 0;
+        totalConfidence += confidence;
+        if (confidence > highestConfidence) highestConfidence = confidence;
+        
+        if (confidence >= 0.75) confidenceRanges['High (≥75%)']++;
+        else if (confidence >= 0.5) confidenceRanges['Medium (50-75%)']++;
+        else confidenceRanges['Low (<50%)']++;
+        
+        // Count degrees
+        const degree = item.degree || 'Unknown';
+        degreesCount[degree] = (degreesCount[degree] || 0) + 1;
+        
+        // Count majors
+        const major = item.major || 'Unknown';
+        majorsCount[major] = (majorsCount[major] || 0) + 1;
+        
+        // Prepare skills by role data
+        if (item.skills) {
+            if (!skillsByRole[role]) skillsByRole[role] = {};
+            item.skills.split(',').forEach(skill => {
+                const trimmedSkill = skill.trim();
+                if (trimmedSkill) {
+                    skillsByRole[role][trimmedSkill] = (skillsByRole[role][trimmedSkill] || 0) + 1;
+                }
+            });
+        }
+    });
+    
+    // Sort roles by count and take top 10
+    const sortedRoles = Object.entries(rolesCount)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+    
+    // Sort degrees by count
+    const sortedDegrees = Object.entries(degreesCount)
+        .sort((a, b) => b[1] - a[1]);
+    
+    // Sort majors by count and take top 10
+    const sortedMajors = Object.entries(majorsCount)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+    
+    // Calculate average confidence by role
+    const avgConfidenceByRole = {};
+    Object.keys(roleConfidence).forEach(role => {
+        const sum = roleConfidence[role].reduce((a, b) => a + b, 0);
+        avgConfidenceByRole[role] = sum / roleConfidence[role].length;
+    });
+    
+    // Create Confidence Distribution Chart
+    const confidenceCtx = document.getElementById('confidenceChart').getContext('2d');
+    new Chart(confidenceCtx, {
+        type: 'doughnut',
+        data: {
+            labels: Object.keys(confidenceRanges),
+            datasets: [{
+                data: Object.values(confidenceRanges),
+                backgroundColor: ['#28a745', '#ffc107', '#dc3545'],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            const total = context.dataset.data.reduce((a, b) => a + b, 0);
+                            const percentage = ((context.raw / total) * 100).toFixed(1);
+                            return `${context.label}: ${context.raw} (${percentage}%)`;
+                        }
+                    }
+                }
+            }
+        }
+    });
+    
+    // Create Roles Distribution Chart
+    const rolesCtx = document.getElementById('rolesChart').getContext('2d');
+    new Chart(rolesCtx, {
+        type: 'bar',
+        data: {
+            labels: sortedRoles.map(item => item[0]),
+            datasets: [{
+                label: 'Number of Predictions',
+                data: sortedRoles.map(item => item[1]),
+                backgroundColor: '#007bff',
+                borderColor: '#0056b3',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1
+                    }
+                }
+            }
+        }
+    });
+    
+    // Create Skills by Role Chart
+    const topRole = sortedRoles.length > 0 ? sortedRoles[0][0] : null;
+    if (topRole && skillsByRole[topRole]) {
+        const roleSkills = Object.entries(skillsByRole[topRole])
+            .sort((a, b) => b[1] - a[1])
+            .slice(0, 8);
+        
+        const skillsCtx = document.getElementById('skillsByRoleChart').getContext('2d');
+        new Chart(skillsCtx, {
+            type: 'bar',
+            data: {
+                labels: roleSkills.map(item => item[0]),
+                datasets: [{
+                    label: `Skills for ${topRole}`,
+                    data: roleSkills.map(item => item[1]),
+                    backgroundColor: '#17a2b8',
+                    borderColor: '#138496',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+    } else {
+        document.getElementById('skillsByRoleChart').parentElement.innerHTML = 
+            '<p class="chart-title">No skills data available for analysis</p>';
+    }
+    
+    // Create CGPA vs Confidence Chart
+    const cgpaConfidenceCtx = document.getElementById('cgpaConfidenceChart').getContext('2d');
+    const cgpaData = historyData
+        .filter(item => item.cgpa !== null && item.confidence !== null)
+        .map(item => ({ x: item.cgpa, y: item.confidence * 100 }));
+    
+    if (cgpaData.length > 0) {
+        new Chart(cgpaConfidenceCtx, {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'CGPA vs Confidence',
+                    data: cgpaData,
+                    backgroundColor: 'rgba(0, 123, 255, 0.5)',
+                    borderColor: 'rgba(0, 123, 255, 1)',
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'CGPA'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Confidence (%)'
+                        },
+                        min: 0,
+                        max: 100
+                    }
+                }
+            }
+        });
+    } else {
+        document.getElementById('cgpaConfidenceChart').parentElement.innerHTML = 
+            '<p class="chart-title">No CGPA data available for analysis</p>';
+    }
+    
+    // Create Degree Distribution Chart
+    const degreeCtx = document.getElementById('degreeChart').getContext('2d');
+    if (sortedDegrees.length > 0) {
+        new Chart(degreeCtx, {
+            type: 'pie',
+            data: {
+                labels: sortedDegrees.map(item => item[0]),
+                datasets: [{
+                    data: sortedDegrees.map(item => item[1]),
+                    backgroundColor: [
+                        '#007bff', '#28a745', '#ffc107', '#dc3545', 
+                        '#6f42c1', '#e83e8c', '#fd7e14', '#20c997'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'right'
+                    }
+                }
+            }
+        });
+    } else {
+        document.getElementById('degreeChart').parentElement.innerHTML = 
+            '<p class="chart-title">No degree data available for analysis</p>';
+    }
+    
+    // Create Major Distribution Chart
+    const majorCtx = document.getElementById('majorChart').getContext('2d');
+    if (sortedMajors.length > 0) {
+        new Chart(majorCtx, {
+            type: 'bar',
+            data: {
+                labels: sortedMajors.map(item => item[0]),
+                datasets: [{
+                    label: 'Number of Predictions',
+                    data: sortedMajors.map(item => item[1]),
+                    backgroundColor: '#6f42c1',
+                    borderColor: '#59359a',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            stepSize: 1
+                        }
+                    }
+                }
+            }
+        });
+    } else {
+        document.getElementById('majorChart').parentElement.innerHTML = 
+            '<p class="chart-title">No major data available for analysis</p>';
+    }
+}
+
+function generateInsights() {
+    if (historyData.length === 0) return;
+    
+    // Calculate insights
+    const totalPredictions = historyData.length;
+    
+    const rolesCount = {};
+    let totalConfidence = 0;
+    let highestConfidence = 0;
+    
+    historyData.forEach(item => {
+        const role = item.predicted_role || 'Unknown';
+        rolesCount[role] = (rolesCount[role] || 0) + 1;
+        
+        const confidence = item.confidence || 0;
+        totalConfidence += confidence;
+        if (confidence > highestConfidence) highestConfidence = confidence;
+    });
+    
+    const avgConfidence = totalConfidence / totalPredictions;
+    const mostCommonRole = Object.entries(rolesCount)
+        .sort((a, b) => b[1] - a[1])[0][0];
+    
+    // Update insight cards
+    document.getElementById('totalPredictions').textContent = totalPredictions;
+    document.getElementById('avgConfidence').textContent = (avgConfidence * 100).toFixed(1) + '%';
+    document.getElementById('commonRole').textContent = mostCommonRole;
+    document.getElementById('highestConfidence').textContent = (highestConfidence * 100).toFixed(1) + '%';
+}
+
+document.addEventListener("DOMContentLoaded", loadHistory);
+</script>
+
+</body>
+</html>
