@@ -126,5 +126,5 @@ This project is licensed under the MIT License.
 ## Contact
 
 **Sreeharini J**  
-Email: your_email@example.com  
-GitHub: [https://github.com/SreehariniJ](https://gi
+Email: sreeharinij@gmail.com  
+GitHub: [https://github.com/SreehariniJ]
