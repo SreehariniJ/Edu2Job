@@ -1,0 +1,28 @@
+# Python cache files
+*.pyc
+__pycache__/
+
+# Database files
+*.db
+
+# Model files (handled with Git LFS)
+*.pkl
+
+# Virtual environment
+.venv/
+env/
+ENV/
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Uploaded user files
+static/uploads/
+
+# OS generated files
+.DS_Store
+Thumbs.db
