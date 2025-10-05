@@ -10,6 +10,7 @@ from functools import wraps
 from flask import Flask, request, jsonify, render_template, current_app
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.utils import secure_filename
+import re
 
 # ---------------- Config ----------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -129,24 +130,47 @@ if ensure_model():
 
 def get_dataset_options():
     """Return degrees, majors, and skills from dataset."""
-    if not os.path.exists(DATASET_PATH):
+    try:
+        if not os.path.exists(DATASET_PATH):
+            return {"degrees": [], "majors": [], "skills": []}
+
+        df = pd.read_csv(DATASET_PATH, on_bad_lines='skip', encoding='utf-8')
+
+        # Filter out "Unknown" and variations
+        def filter_unknown_values(series):
+            if series is None or series.empty:
+                return []
+            # Convert to string, strip whitespace, and filter out unknown variations
+            cleaned = series.dropna().astype(str).str.strip()
+            # Filter out various forms of "unknown"
+            filtered = cleaned[
+                ~cleaned.str.lower().isin(['unknown', 'unknown ', ' unknown', 'n/a', 'na', 'none', 'null'])
+            ]
+            return sorted(filtered.unique().tolist())
+
+        degrees = filter_unknown_values(df["degree"] if "degree" in df.columns else None)
+        majors = filter_unknown_values(df["major"] if "major" in df.columns else None)
+
+        skills_set = set()
+        if "skills" in df.columns:
+            for s in df["skills"].dropna().astype(str):
+                # Clean and split skills
+                clean_skills = re.sub(r'[\[\]\'\"]', '', s)  # Remove brackets and quotes
+                for token in clean_skills.split(','):
+                    skill = token.strip().lower()
+                    if (skill and len(skill) > 1 and 
+                        skill not in ['unknown', 'n/a', 'na', 'none', 'null']):
+                        skills_set.add(skill)
+
+        return {
+            "degrees": degrees,
+            "majors": majors, 
+            "skills": sorted(skills_set)
+        }
+    
+    except Exception as e:
+        print(f"❌ Error in get_dataset_options: {e}")
         return {"degrees": [], "majors": [], "skills": []}
-
-    df = pd.read_csv(DATASET_PATH)
-
-    degrees = sorted(df["degree"].dropna().astype(str).str.strip().unique().tolist())
-    majors = sorted(df["major"].dropna().astype(str).str.strip().unique().tolist())
-
-    skills_set = set()
-    for s in df["skills"].dropna().astype(str):
-        for token in s.split(","):
-            t = token.strip().lower()
-            if t:
-                skills_set.add(t)
-
-    return {"degrees": degrees, "majors": majors, "skills": sorted(skills_set)}
-
-
 # ---------------- Routes - Pages ----------------
 @app.route("/")
 def index():
@@ -306,60 +330,62 @@ def api_save_profile(current_user):
 # ---------------- Prediction APIs ----------------
 @app.route("/api/predict", methods=["POST"])
 @token_required
-def predict(current_user):
-    data = request.get_json(force=True) or {}
-    degree = data.get("degree", "")
-    major = data.get("major", "")
-    cgpa = float(data.get("cgpa", 0))
-    skills = [s.lower() for s in data.get("skills", [])]
-
-    if not MODEL or not OHE or not MLB:
-        return jsonify({"error": "Model not available"}), 500
-
-    X_degmaj = OHE.transform([[degree, major]])
-    X_skills = MLB.transform([skills])
-    X_cgpa = np.array([[cgpa]])
-    X = np.hstack([X_degmaj, X_cgpa, X_skills])
-
-    proba = MODEL.predict_proba(X)[0]
-    classes = MODEL.classes_
-    top_indices = np.argsort(proba)[::-1][:3]
-
-    top_suggestions = []
-    for idx in top_indices:
-        role = classes[idx]
-        conf = float(proba[idx])
-        matched_skills = [s for s in skills if s in MLB.classes_]
-        explanation = f"Skills matched: {', '.join(matched_skills) if matched_skills else 'None'}"
-        top_suggestions.append({
-            "role": role,
-            "confidence": conf,
-            "explanation": explanation,
-            "role_skills": matched_skills
-        })
-
-    # Save only top prediction
+def api_predict(current_user):
     try:
-        ph = PredictionHistory(
+        data = request.get_json(force=True) or {}
+        degree = (data.get("degree") or "").strip()
+        major = (data.get("major") or "").strip()
+        cgpa = float(data.get("cgpa") or 0)
+        skills = data.get("skills") or []
+
+        if not degree or not major or not skills:
+            return jsonify({"error": "Please fill in all fields."}), 400
+
+        if MODEL is None or OHE is None or MLB is None:
+            return jsonify({"error": "Model not loaded"}), 500
+
+        # Prepare input for prediction
+        degree_major = [[degree, major]]
+        X_degmaj = OHE.transform(degree_major)
+
+        # Handle skills (lowercase)
+        skills = [s.lower() for s in skills]
+        X_skills = MLB.transform([skills])
+
+        X_cgpa = np.array([[cgpa]])
+        X_input = np.hstack([X_degmaj, X_cgpa, X_skills])
+
+        # Predict probabilities
+        probs = MODEL.predict_proba(X_input)[0]
+        classes = MODEL.classes_
+        top_indices = np.argsort(probs)[::-1][:5]
+
+        top_roles = [{"role": classes[i], "confidence": float(probs[i])} for i in top_indices]
+        predicted_role = top_roles[0]["role"]
+        confidence = top_roles[0]["confidence"]
+
+        # Save to prediction history
+        history = PredictionHistory(
             user_id=current_user.id,
             degree=degree,
             major=major,
             cgpa=cgpa,
-            skills=",".join(skills),
-            predicted_role=top_suggestions[0]["role"],
-            confidence=top_suggestions[0]["confidence"]
+            skills=", ".join(skills),
+            predicted_role=predicted_role,
+            confidence=confidence
         )
-        db.session.add(ph)
+        db.session.add(history)
         db.session.commit()
-    except Exception as e:
-        db.session.rollback()
-        return jsonify({"error": f"DB save failed: {e}"}), 500
 
-    return jsonify({
-        "predicted_role": top_suggestions[0]["role"],
-        "confidence": top_suggestions[0]["confidence"],
-        "top_suggestions": top_suggestions
-    }), 200
+        return jsonify({
+            "predicted_role": predicted_role,
+            "confidence": confidence,
+            "top_suggestions": top_roles
+        })
+
+    except Exception as e:
+        print("❌ Prediction error:", e)
+        return jsonify({"error": f"Prediction failed: {str(e)}"}), 500
 
 
 # ---------------- History APIs ----------------

@@ -1,10 +1,12 @@
-# train_model.py
 import os
 import numpy as np
 import pandas as pd
 import joblib
-from sklearn.preprocessing import OneHotEncoder, MultiLabelBinarizer
+from sklearn.preprocessing import OneHotEncoder, MultiLabelBinarizer, StandardScaler
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
+from imblearn.over_sampling import SMOTE
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATASET_PATH = os.path.join(BASE_DIR, "data", "dataset.csv")
@@ -24,66 +26,83 @@ def train_model():
     df = pd.read_csv(DATASET_PATH)
     original_rows = len(df)
 
-    # Ensure required columns exist
+    # --- Required Columns ---
     req_cols = ["degree", "major", "cgpa", "skills", "job_role"]
     for c in req_cols:
         if c not in df.columns:
             raise ValueError(f"Missing required column in dataset: {c}")
 
-    # Drop rows with missing target (job_role)
-    before = len(df)
-    df = df.dropna(subset=["job_role"]).copy()
-    print(f"🗑️ Dropped {before - len(df)} rows with missing job_role")
-
-    # Degree & Major: replace NaN with "Unknown"
+    # --- Preprocessing ---
+    df = df.dropna(subset=["job_role"])
     df["degree"] = df["degree"].fillna("Unknown").astype(str).str.strip()
     df["major"] = df["major"].fillna("Unknown").astype(str).str.strip()
-
-    # CGPA: numeric, fill NaN with median
     df["cgpa"] = pd.to_numeric(df["cgpa"], errors="coerce")
     median_cgpa = df["cgpa"].median()
-    before = df["cgpa"].isna().sum()
     df["cgpa"] = df["cgpa"].fillna(median_cgpa)
-    print(f"📊 Filled {before} missing CGPA values with median = {median_cgpa:.2f}")
-
-    # Skills: drop if missing or empty
-    before = len(df)
     df = df.dropna(subset=["skills"])
-    dropped_missing_skills = before - len(df)
-
     df["skills"] = df["skills"].astype(str).apply(
         lambda s: [t.strip().lower() for t in s.split(",") if t.strip()]
     )
-    before = len(df)
-    df = df[df["skills"].map(len) > 0]  # drop rows where skills list is empty
-    dropped_empty_skills = before - len(df)
+    df = df[df["skills"].map(len) > 0]
 
-    print(f"🗑️ Dropped {dropped_missing_skills} rows with missing skills")
-    print(f"🗑️ Dropped {dropped_empty_skills} rows with empty skill list")
-
-    # One-hot encode degree + major
+    # --- Feature Encoding ---
     ohe = _make_ohe()
     X_degmaj = ohe.fit_transform(df[["degree", "major"]])
 
-    # MultiLabelBinarizer for skills
     mlb = MultiLabelBinarizer()
     X_skills = mlb.fit_transform(df["skills"])
     mlb.classes_ = np.array([c.lower() for c in mlb.classes_])
 
-    # Numeric feature: cgpa
     X_cgpa = df[["cgpa"]].to_numpy().reshape(-1, 1)
+    scaler = StandardScaler()
+    X_cgpa_scaled = scaler.fit_transform(X_cgpa)
 
-    # Final X
-    X = np.hstack([X_degmaj, X_cgpa, X_skills])
+    X = np.hstack([X_degmaj, X_cgpa_scaled, X_skills])
     y = df["job_role"].astype(str).to_numpy()
 
-    # Train RandomForest
-    clf = RandomForestClassifier(n_estimators=100, random_state=42)
-    clf.fit(X, y)
+    # --- Split Data ---
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42, stratify=y
+    )
 
-    # Save model + encoders
+    # --- Apply SMOTE to handle class imbalance ---
+    smote = SMOTE(random_state=42)
+    X_train_res, y_train_res = smote.fit_resample(X_train, y_train)
+
+    # --- RandomForest with class weights and hyperparameter tuning ---
+    rf = RandomForestClassifier(random_state=42, class_weight="balanced")
+    param_grid = {
+        "n_estimators": [100, 200],
+        "max_depth": [None, 10, 20],
+        "min_samples_split": [2, 5],
+        "min_samples_leaf": [1, 2],
+        "bootstrap": [True, False],
+    }
+
+    grid = GridSearchCV(
+        rf,
+        param_grid,
+        cv=3,
+        scoring="accuracy",
+        verbose=1,
+        n_jobs=-1
+    )
+    grid.fit(X_train_res, y_train_res)
+    clf = grid.best_estimator_
+    print(f"✅ Best Parameters: {grid.best_params_}")
+
+    # --- Evaluate Model ---
+    y_pred = clf.predict(X_test)
+    acc = accuracy_score(y_test, y_pred)
+    print(f"\n🎯 Model Accuracy: {acc*100:.2f}%\n")
+    print("📊 Classification Report:")
+    print(classification_report(y_test, y_pred))
+    print("🔢 Confusion Matrix:")
+    print(confusion_matrix(y_test, y_pred))
+
+    # --- Save model and encoders ---
     joblib.dump(clf, MODEL_PATH)
-    joblib.dump({"ohe": ohe, "mlb": mlb}, ENCODERS_PATH)
+    joblib.dump({"ohe": ohe, "mlb": mlb, "scaler": scaler}, ENCODERS_PATH)
 
     print("\n✅ Training complete.")
     print(f"Original dataset rows: {original_rows}")
