@@ -358,7 +358,7 @@ def api_predict(current_user):
         # Predict probabilities
         probs = MODEL.predict_proba(X_input)[0]
         classes = MODEL.classes_
-        top_indices = np.argsort(probs)[::-1][:5]
+        top_indices = np.argsort(probs)[::-1][:3]
 
         top_roles = [{"role": classes[i], "confidence": float(probs[i])} for i in top_indices]
         predicted_role = top_roles[0]["role"]
