@@ -19,7 +19,7 @@ It provides an interactive dashboard, real-time prediction history, and personal
 
 ✅ Secure **User Authentication** (JWT-based)  
 ✅ Personalized **Profile Management** with image upload  
-✅ **AI-powered Job Prediction** using Decision Tree / Random Forest models  
+✅ **AI-powered Job Prediction** using Random Forest models  
 ✅ Comprehensive **Prediction History** with timestamps & confidence levels  
 ✅ Sleek **Interactive Dashboard** featuring:  
    - 📊 Total Predictions  
@@ -39,7 +39,7 @@ It provides an interactive dashboard, real-time prediction history, and personal
 | **Frontend** | HTML, Tailwind CSS, JavaScript |
 | **Backend** | Python, Flask, SQLAlchemy |
 | **Database** | SQLite |
-| **ML Models** | Scikit-learn (Decision Tree / Random Forest) |
+| **ML Models** | Scikit-learn (Random Forest) |
 | **Libraries** | pandas, pickle, Flask-CORS |
 | **Version Control** | Git & GitHub |
 
