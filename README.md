@@ -4,6 +4,8 @@
 
 🚀 *Empowering Students to Find the Right Career Path through AI Insights*  
 
+**[🌐 Live Demo: Edu2Job](https://sreeharini.pythonanywhere.com/)**
+
 </div>
 
 ---
